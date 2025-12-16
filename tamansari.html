@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/DWtamansari.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Desa Wisata Tamansari</h1>
+            <p> destinasi dengan kekayaan alam dan budayanya, serta lokasinya yang dekat dengan Kawah Ijen.</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/tsari1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tsari2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tsari3.jpg " alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tsari4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tsari5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tsari6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Destinasi yang kaya akan potensi alam dan budaya, sering disebut sebagai "gerbang" menuju Kawah Ijen. Desa ini berhasil masuk dalam 50 
+                     besar Anugerah Desa Wisata Indonesia (ADWI) 2021. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>"Gerbang" Kawah Ijen dengan Fenomena Langka:</strong> Keunikan paling menonjol adalah perannya sebagai pos terakhir dan titik tolak teraman menuju Kawah Ijen.</li>
+                    <li><strong>Situs Seni dan Budaya Unik:</strong> Desa ini memiliki situs seni budaya yang sangat khas, menampilkan sekitar 1.000 patung penari Gandrung (tarian khas Banyuwangi) yang tersusun rapi di tengah hamparan sawah dan perbukitan hijau, berfungsi sebagai amfiteater terbuka. </li>
+                    <li><strong>Pemandian Alami dengan Cerita Rakyat:</strong> Pemandian alami dengan air pegunungan yang jernih, bersumber dari tujuh mata air, yang konon dipercaya sebagai tempat mandi para bidadari. Ini menawarkan pengalaman relaksasi yang unik dengan nuansa mistis lokal. </li>
+                    <li><strong>Desa Sejuta Pohon Kopi:</strong> Dikenal sebagai salah satu penghasil kopi terbaik, wisatawan dapat mengikuti wisata edukasi seputar perkebunan dan proses pengolahan kopi.</li>
+                    <li><strong>Smart Village dan Homestay Lokal:</strong> Desa ini mendapat predikat Smart Village karena pengelolaan digitalnya, dan menawarkan pengalaman menginap di homestay milik warga dengan kearifan lokal yang kuat, bukan hotel berbintang.</li>
+                    <li><strong>Kuliner dan Kerajinan Khas:</strong> Menawarkan jajanan pasar dan kerajinan belerang yang menjadi ciri khas, seperti getuk lindri khas Tamansari. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Pendakian Kawah Ijen</li>
+                    <li> Mandi di Sendang Seruni</li>
+                    <li> Menjelajah Alam yang Masih Asri</li>
+                    <li> Belajar Budaya Lokal</li>
+                    <li> Edukasi Pertanian dan Perkebunan</li>
+                    <li> Mengamati Kehidupan Penambang Belerang</li>
+                    <li> Menyaksikan Kesenian Tradisional</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Desa Wisata Tamansari terletak di Dusun Jambu, Tamansari, Kecamatan Licin, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong>  Biaya tiket masuk utama ke kawasan Desa Wisata Tamansari umumnya berkisar antara Rp 10.000 hingga Rp 20.000 per orang.</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Waktu terbaik untuk berkunjung adalah selama musim kemarau, yaitu sekitar bulan April hingga Oktober. Cuaca cenderung lebih cerah, memudahkan aktivitas luar ruangan seperti pendakian Kawah Ijen dan trekking di sekitar desa.</li>
+                    <li><strong>Transportasi:</strong> Cara termudah adalah menggunakan kendaraan pribadi (mobil atau motor) atau menyewa taksi/mobil rental. Perjalanan memakan waktu sekitar 30-45 menit.</li>
+                    <li><strong>Akomodasi:</strong> Akomodasi utama di Desa Wisata Tamansari adalah homestay yang dikelola langsung oleh masyarakat setempat, menawarkan pengalaman menginap otentik dan kearifan lokal.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Sopan Santun</li>
+                    <li> Berpakaian rapi dan Sopan</li>
+                    <li> Meminta Izin Sebelum Mengambil Gambar atau Foto</li>
+                    <li> Mengikuti Aturan Keselamatan</li>
+                    <li> Tidak Merusak Fasilitas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

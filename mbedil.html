@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/bedil4.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Pulau Bedil</h1>
+            <p> destinasi wisata bahari eksotis di Banyuwangi</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/bedil1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bedil2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bedil3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbedil.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bedil5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bedil6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Pulau Bedil adalah destinasi wisata bahari yang indah dan masih alami, sering dijuluki sebagai "Raja Ampat-nya Banyuwangi". 
+                     Pulau kecil ini menawarkan pemandangan gugusan pulau eksotis dengan air laut jernih berwarna hijau kebiruan dan pasir putih yang lembut. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Kemiripan Lanskap dengan Raja Ampat:</strong> Pulau ini terkenal karena pemandangan gugusan pulau karang kecil yang tersebar di tengah laut biru jernih, mirip dengan formasi karst di Raja Ampat, Papua Barat</li>
+                    <li><strong>Kealamian dan Ketenangan:</strong> Berbeda dengan pantai-pantai lain yang mungkin lebih ramai, Pulau Bedil menawarkan suasana yang masih sangat alami, tenang, dan belum terlalu padat pengunjung.</li>
+                    <li><strong>Akseeibilitas Unik:</strong> Pulau ini adalah pulau tak berpenghuni. Akses utamanya mengharuskan pengunjung menaiki perahu nelayan dari Pantai Mustika atau Pantai Pancer selama beberapa menit, menambah kesan petualangan dan eksklusivitas.</li>
+                    <li><strong>Kejernihan Air Laut:</strong>  Air di sekitar pulau ini terkenal sangat jernih, berwarna hijau toska atau biru muda, memungkinkan pengunjung untuk melihat dasar laut dengan jelas dan berenang dengan nyaman di area laguna yang tenang.</li>
+                    <li><strong>Pasir Putih yang Lembut:</strong> Garis pantai di Pulau Bedil memiliki pasir putih yang sangat bersih dan lembut, menambah daya tarik estetika pantai yang asri.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Snorkeling dan Diving</li>
+                    <li> Berenang</li>
+                    <li> Island Hopping</li>
+                    <li> Menikmati Pemandangan dan Fotografi</li>
+                    <li> Bersantai di Tepi Pantai</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> perairan Pancer, Desa Sumberagung, Kecamatan Pesanggaran, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> sekitar Rp 185.000 - Rp 470.000 per orang untuk paket open trip</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Bulan April hingga Oktober. Pada periode ini, cuaca cenderung cerah, ombak lebih tenang, dan visibilitas air untuk snorkeling lebih baik.</li>
+                    <li><strong>Transportasi:</strong> Anda bisa menggunakan kendaraan pribadi (mobil atau motor) atau menyewa mobil/motor di Banyuwangi Dilanjutkan dengan menggunakan perahu nelayan sewaan. Waktu tempuh perjalanan laut ini sekitar 10-30 menit tergantung kondisi cuaca dan ombak.</li>
+                    <li><strong>Akomodasi:</strong> </li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Tidak Merusak Biota Laut</li>
+                    <li> Gunakan Pakaian yang Sopan</li>
+                    <li> Ikuti Arahan Pemandu</li>
+                    <li> Selalu Utamakan Keselamatan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

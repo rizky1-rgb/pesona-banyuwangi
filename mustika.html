@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/bangsring.jpeg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Bangsring Underwater</h1>
+            <p> </p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring7.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring8.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Bangsring Underwater (Bunder) adalah destinasi ekowisata bahari populer yang terletak di Desa Bangsring, Kecamatan Wongsorejo, Kabupaten Banyuwangi. 
+                    Tempat ini terkenal karena upaya konservasi terumbu karang yang sukses dan menawarkan berbagai aktivitas air yang menarik dan edukatif bagi pengunjung. 
+                </p>
+                
+                <h3>Keunikan Bangsring Underwater</h3>
+                <ul>
+                    <li><strong>Golden Sands:</strong> Pantai ini terkenal dengan hamparan pasirnya yang berwarna keemasan, bersih, dan masih alami.</li>
+                    <li><strong>Bentuk Pantai yang Unik:</strong> Bibir pantai membentuk seperti setengah lingkaran, memberikan pemandangan panorama yang indah dan berbeda dari pantai lain.</li>
+                    <li><strong>Akses ke Pulau Lain:</strong>  Pantai Mustika sering dijadikan titik awal atau tempat transit untuk menuju ke destinasi wisata bahari lain yang tersembunyi, seperti Pulau Merah (yang dapat dilihat dari kejauhan), Pulau Bedil, Pulau Rengganis, dan Green Island.</li>
+                    <li><strong>Kuliner Khas Lobster:</strong> Kawasan sekitar pantai, khususnya di area Pancer, terkenal dengan banyaknya warung makan yang menyajikan hidangan laut segar, dengan menu andalan lobster.</li>
+                    <li><strong>Potensi Olahraga Air:</strong> Meskipun ombaknya cenderung tenang di area tertentu, pantai ini juga dikenal memiliki ombak besar di sisi lain, membuatnya cocok untuk berbagai aktivitas air.</li>
+                    <li><strong>Suasana yang Tenang:</strong> Pantai ini menawarkan suasana yang relatif tenang dan jauh dari keramaian wisata massal, cocok untuk bersantai dan menikmati alam. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Surfing dan Bodyboarding</li>
+                    <li> Eksplorasi Pulau Pulau Kecil</li>
+                    <li> Menikmati Suasana Tenang</li>
+                    <li> Menikmati Kuliner Seafood</li>
+                    <li> Menngabadikan Golden Hour</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Pancer, Desa Sumberagung, Kecamatan Pesanggaran, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Diperkirakan sekitar Rp 5.000 hingga Rp 10.000 per orang. </li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pada musim kemarau, antara bulan April hingga Oktober, karena kondisi cuaca lebih cerah dan ombak cenderung lebih bersahabat untuk berbagai aktivitas pantai.</li>
+                    <li><strong>Transportasi:</strong> Jarak Pantai Mustika dari pusat kota Banyuwangi sekitar 70 km, dengan waktu tempuh sekitar 1,5 hingga 2 jam perjalanan dan dapat diakses dengan kendaraan roda 2 & roda 4</li>
+                    <li><strong>Akomodasi:</strong> Di sekitar area Pantai Mustika, Anda dapat menemukan berbagai pilihan akomodasi, mulai dari homestay yang ramah di kantong hingga villa.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Perhatikan Himbauan Berenang</li>
+                    <li> Berperilaku Sopan</li>
+                    <li> Tidak Merusak Fasilitas</li>
+                    <li> Awasi Anak-anak</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

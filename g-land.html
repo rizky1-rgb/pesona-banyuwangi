@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/g4.jpeg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>G-Land</h1>
+            <p>Pantai indah dengan ombak surfing kelas dunia.</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/g1.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/g2.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/g3.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gsunset1.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gsunset2.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gland-sunset.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     G-Land, atau yang dikenal juga sebagai Pantai Plengkung, adalah salah satu destinasi selancar paling terkenal di dunia. Terletak di kawasan Taman Nasional Alas Purwo, pantai ini awalnya hanya dikenal oleh para nelayan dan masyarakat lokal sebagai bagian dari wilayah pesisir selatan yang berombak besar karena langsung berhadapan dengan Samudra Hindia.
+                     Nama “Plengkung” dipercaya berasal dari bentuk garis pantainya yang melengkung, sedangkan nama “G-Land” diberikan oleh peselancar asing pada tahun 1970–an.
+                </p>
+                
+                <h3>Keunikan G-Land</h3>
+                <ul>
+                    <li><strong>Ombak Tak Tertadingi:</strong> Disebut salah satu dari tujuh ombak terbaik dunia, dengan karakteristik ombak panjang, cepat, tinggi (bisa 4-8 meter), dan membentuk tabung (barrel) yang hampir sempurna, ideal untuk peselancar tingkat lanjut. </li>
+                    <li><strong>Bagian Bagian Ombak Terkenal:</strong> Memiliki spot legendaris seperti "Money Trees" (ombak panjang dan kuat) dan "Tiger Tracks" (lebih bersahabat untuk tingkat menengah).</li>
+                    <li><strong>Lokasi di Taman Nasional Alas Purwo:</strong> Terletak di kawasan hutan asri, menawarkan pemandangan alam unik dengan kombinasi hutan hijau, pasir putih, dan laut biru, serta satwa liar seperti kera dan rusa yang sesekali terlihat.</li>
+                    <li><strong>Pusat Selancar Internasional</strong> Sering menjadi tuan rumah kompetisi selancar dunia (World Surfing League) karena kualitas ombaknya yang luar biasa, menarik peselancar dari Australia, Amerika, dan Eropa.</li>
+                    <li><strong>Sejarah dan Julukan:</strong> Dikenal sebagai "G-Land" karena teluknya yang menyerupai huruf G dan dianggap sebagai surganya pencari ombak profesional.  </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Berselancar dengan ombak besar kelas dunia</li>
+                    <li> Menikmati keindahan bawah laut di sekitar G-Land dengan snorkeling atau menyelam.</li>
+                    <li> Menjelajahi dan menikmati pemandangan alam yang eksotis dan hutan tropis alas purwo.</li>
+                    <li> Menikmati Matahari Terbenam</li>
+                    <li> Mengunjungi Penangkaran Penyu</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Teluk Grajagan, Taman Nasional Alas Purwo, ujung tenggara Pulau Jawa, di seberang Bali.</li>
+                    <li><strong>Biaya Masuk:</strong> 15.000-30.000 untuk warga domestik dan 150.000 untuk wisatawan mancanegara</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Antara April dan Oktober, ketika angin bertiup lepas pantai dan gelombang dari Samudra Hindia paling konsisten dan besar. </li>
+                    <li><strong>Transportasi:</strong> Akses paling umum menuju G-Land adalah dengan kapal cepat (speedboat) dari Bali (sekitar 2,5 hingga 3,5 jam perjalanan), atau melalui jalur darat yang lebih panjang dari Banyuwangi menuju Pantai Grajagan, diikuti perjalanan perahu atau berjalan kaki melalui hutan taman nasional. </li>
+                    <li><strong>Akomodasi:</strong>  Beberapa kamp selancar, seperti Bobby's, Jack's, dan Jawa Jiwa G-Land Surf Camp, menyediakan akomodasi di lokasi terpencil ini. </li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Hormati Alam dan Satwa Liar</li>
+                    <li> Tetaplah berada di jalur yang sudah ditentukan untuk trekking atau berkendara</li>
+                    <li> Bawa perbekalan yang cukup, termasuk air minum, P3K, dan perlengkapan keamanan yang diperlukan</li>
+                    <li> Dilarang mengambil benda-benda dari alam, termasuk batu, kayu, tumbuhan, atau daun dari hutan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

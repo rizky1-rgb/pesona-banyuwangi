@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/jatipapak2.jpg" alt="" style="display: block;">
+            </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Mangrove Jatipapak</h1>
+            <p>Wisata hutan mangrove terluas di banyuwangi</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/jpapak.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/jpapak2.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/jpapak3.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/jpapak4.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Hutan Mangrove Jatipapak adalah destinasi wisata alam di dalam Taman Nasional Alas Purwo, Banyuwangi, terkenal dengan jalur jembatan kayu (Mangrove Trail) yang membentang melintasi hutan bakau menuju Teluk Pangpang, 
+                    menawarkan pemandangan unik vegetasi mangrove (terutama jenis Rhizophora) dan keunikan landasan pacu pesawat patroli (Airstrip Jatipapak) tempat satwa liar mencari makan. Tempat ini menjadi lokasi healing dengan 
+                    suasana alam yang tenang, serta menjadi bagian dari ekosistem mangrove penting yang kaya jenis tumbuhan dan fauna. 
+                </p>
+                
+                <h3>Keunikan Mangrove Jatipapak</h3>
+                <ul>
+                    <li><strong>Airstrip Jadul:</strong>  Area landasan pacu pesawat patroli Taman Nasional Alas Purwo yang kini menjadi tempat satwa liar mencari makan, memberikan pemandangan unik yang jarang ditemui di tempat wisata mangrove lain.</li>
+                    <li><strong>Mangrove Trail Edukatif:</strong> Jembatan kayu sepanjang 600 meter yang menembus hutan bakau, memungkinkan pengunjung melihat langsung 17 jenis mangrove dan belajar tentang ekosistemnya secara interaktif.</li>
+                    <li><strong>Keanekaragaman Hayati:</strong> Tidak hanya mangrove, area ini juga menjadi habitat Banteng Jawa, Merak Hijau, dan Ayam Hutan, terutama di sekitar airstrip.</li>
+                    <li><strong>Pemandangan Teluk Pangpang:</strong> Ujung jembatan menawarkan pemandangan indah ke arah Teluk Pangpang dan bukit Sembulungan yang ikonik, termasuk peninggalan bunker dan meriam.</li>
+                    <li><strong>Spot Foto Favorit:</strong> Terowongan pohon bakau dan dek kayu di ujung jembatan menjadi spot foto yang sangat populer. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li>Menjelajah hutan mangrove dengan menyusuri jembatan kayu untuk edukasi ekologi dan menikmati suasana alam.</li>
+                    <li>Mengenal lebih dekat fungsi dan jenis-jenis mangrove secara langsung.</li>
+                    <li>Banyak spot menarik untuk berfoto di sepanjang trek dan area airstrip.</li>
+                    <li> Mengamati satwa liar yang datang ke area terbuka airstrip. </li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Taman Nasional Alas Purwo, Desa Kalipait, Kecamatan Tegaldlimo, Banyuwangi.</li>
+                    <li><strong>Biaya Masuk:</strong> Biaya masuk per orang ke kawasan TN Alas Purwo sendiri sekitar Rp 10.000 pada hari biasa. </li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pagi atau sore hari untuk menghindari panas dan menikmati suasana yang lebih teduh. </li>
+                    <li><strong>Transportasi:</strong> Dapat diakses dengan kendaraan bermotor, meskipun beberapa pengunjung mencatat lokasinya cukup jauh dari pusat kota. </li>
+                    <li><strong>Akomodasi:</strong>  Pilihan akomodasi yang tersedia di sekitar lokasi utama Mangrove Jatipapak cenderung berupa penginapan lokal sederhana atau homestay di desa-desa terdekat seperti Kalipait atau Purworejo. </li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li>Mengikuti Arahan Pemandu/Petugas</li>
+                    <li>Dilarang menginjak area di luar jalur jembatan kayu atau merusak vegetasi</li>
+                    <li>Dilarang menyentuh, memberi makan, atau mengganggu satwa liar di habitat aslinya</li>
+                    <li>Dilarang memetik, mengambil bagian dari tanaman mangrove, atau biota lainnya dari habitat aslinya.</li>
+                    <li>Dilarang melakukan konversi areal atau aktivitas pembangunan tanpa izin resmi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

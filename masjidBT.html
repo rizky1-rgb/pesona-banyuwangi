@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/masjidBT.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Masjid Bawah Tanah Glenmore</h1>
+            <p> Masjid Unik yang dibangun di Bawah Tanah dengan Kedalaman 5 meter</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/bt1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bt2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bt3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Masjid Bawah Tanah Glenmore, atau bernama resmi Masjid Sidratul Muntaha, adalah masjid unik yang berlokasi di Desa Karangharjo, 
+                     Kecamatan Glenmore, Kabupaten Banyuwangi. Masjid ini dibangun di bawah permukaan tanah dengan kedalaman sekitar 5 meter. Masjid 
+                     ini kini menjadi objek wisata religi yang menarik banyak pengunjung dari dalam dan luar negeri, termasuk dari Malaysia. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Dibangun di Bawah Tanah:</strong> Masjid ini berlokasi sekitar 5 meter di bawah permukaan tanah, di lahan bekas kolam ikan yang tidak produktif. Gagasan ini muncul karena kondisi lahan yang sudah cekung.</li>
+                    <li><strong>Dibangun Tanpa Arsitek Profesional:</strong> Pembangunan masjid tidak melibatkan arsitek khusus, melainkan dirancang sendiri oleh pemiliknya dan dikerjakan oleh sekitar 25 tukang lokal dari desa setempat.</li>
+                    <li><strong>Ornamen Batu Kali:</strong> Dinding masjid dihiasi dengan ornamen batu kali, memberikan nuansa alami dan berbeda dari masjid pada umumnya.</li>
+                    <li><strong>60 Pilar Penyangga:</strong> Terdapat 60 pilar beton yang berfungsi sebagai penyangga atap, menambah kesan megah di dalam struktur bawah tanahnya.</li>
+                    <li><strong>Beduk Raksasa:</strong>  Di dalamnya terdapat beduk berdiameter 2 meter yang didatangkan khusus dari Bandung. </li>
+                    <li><strong>Suasana Sejuk dan Tenang:</strong> Lokasinya yang berada di bawah tanah membuat suasana di dalam masjid terasa sejuk, adem, dan tenang, membuat jemaah betah berlama-lama.</li>
+                    <li><strong>Filosofi Mendalam:</strong> Pembangunan di bawah tanah juga disebut memiliki filosofi tersendiri, yang dikaitkan dengan bekal kematian.</li>
+                    <li><strong>Destinasi Wisata Religi:</strong>  Selain sebagai tempat ibadah, keunikannya menjadikan masjid ini sebagai objek wisata religi yang menarik banyak pengunjung, bahkan dari luar negeri seperti Malaysia. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Melaksanakan Sholat</li>
+                    <li> Itikaf (Berdiam Diri di Masjid Untuk Beribadah)</li>
+                    <li> Mengikuti Kajian Keagamaan</li>
+                    <li> Menikmati Arsitektur Unik</li>
+                    <li> Menimba Keberkahan</li>
+                    <li> WIsata Religius</li>
+                    <li> Melihat dan Mengamati Beduk Raksasa</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Jl. Raya Ps., Karangharjo, Kec. Glenmore, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Tidak ada biaya masuk atau tiket untuk mengunjungi masjid ini.</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Di luar waktu salat wajib untuk menghindari mengganggu jemaah yang sedang beribadah</li>
+                    <li><strong>Transportasi:</strong> Dapat Diakses dengan berbagai pilihan moda transportasi </li>
+                    <li><strong>Akomodasi:</strong> Di sekitar Kecamatan Glenmore, tersedia beberapa pilihan akomodasi, mulai dari penginapan sederhana hingga hotel</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Berpakaian Sopan dan Tertutup</li>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Menjaga Ketertiban dan Ketenangan</li>
+                    <li> Melepas Alas Kaki</li>
+                    <li> Menjaga Adab saat Berfoto</li>
+                    <li> ematikan atau Mengcilkan Volume Posel</li>
+                    <li> Tidak Merokok</li>
+                    <li> Tidak Membawa Hewan Peliharaan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

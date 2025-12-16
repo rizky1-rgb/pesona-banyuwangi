@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/ranti.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Gunung Ranti</h1>
+            <p> salah satu puncak "negeri di atas awan" di kawasan Pegunungan Ijen dengan ketinggian mencapai 2.601 Mdpl dan pemandangan spektakulernya</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/ranti2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ranti3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ranti4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ranti5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ranti6.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ranti7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Gunung Ranti (juga dikenal sebagai Gunung Rante atau Meranti) adalah sebuah gunung yang terletak di kawasan Pegunungan Ijen, di perbatasan Kabupaten Banyuwangi 
+                     dan Kabupaten Bondowoso, Jawa Timur. Gunung ini memiliki ketinggian sekitar 2.601 meter di atas permukaan laut (Mdpl) dan dikelola sebagai kawasan hutan 
+                     lindung oleh Perhutani KPH Banyuwangi Barat. Gunung Ranti sering dijuluki "negeri di atas awan" karena pemandangan spektakuler yang ditawarkannya.
+                </p>
+                
+                <h3>Keunikan Gunung Ranti</h3>
+                <ul>
+                    <li><strong>Pemandangan Multi-Gunung:</strong> Dari puncaknya, pendaki tidak hanya dapat menikmati pemandangan matahari terbit yang indah, tetapi juga panorama jelas Kawah Ijen, serta Gunung Raung dan Gunung Merapi yang menjulang gagah.</li>
+                    <li><strong>Alternatif Pendakian:</strong> Gunung Ranti menjadi alternatif populer bagi pendaki yang ingin merasakan pengalaman mendaki yang berbeda di kawasan timur Jawa, terutama jika bosan dengan destinasi gunung lain di sekitarnya.</li>
+                    <li><strong>Medan Menantang Untuk Pemula:</strong> Meskipun sering disebut cocok untuk pendaki pemula, jalur pendakiannya menawarkan medan yang cukup menanjak dan menantang, memberikan pengalaman pendakian yang memuaskan dalam waktu tempuh sekitar 3 jam.</li>
+                    <li><strong>Kealamian dan Ketenangan:</strong> Kawasan gunung ini relatif masih alami dan belum seramai destinasi wisata utama lainnya di Ijen, menawarkan suasana yang lebih tenang dan asri bagi para pengunjung.</li>
+                    <li><strong>Kaitan Budaya:</strong> Gunung Ranti juga dikenal sebagai salah satu tempat bermukim Suku Osing di Banyuwangi, menambahkan dimensi budaya lokal pada keunikan alamnya. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Pendakian (Hiking) Menuju Puncak</li>
+                    <li> Menikmati Matahari Terbit (Sunrise Viewing)</li>
+                    <li> Menikmati Pemandangan "Negeri di Atas Awan"</li>
+                    <li> Camping (Berkemah) di Area Terbuka Dekat Puncak </li>
+                    <li> Menjelajahi Ekosistem Hutan yng Masih Asri dan Dilindungi</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Pegunungan Ijen, di perbatasan Kabupaten Banyuwangi dan Kabupaten Bondowoso</li>
+                    <li><strong>Biaya Masuk:</strong> Mulai dari 20.000 unruk wisatawan domestik dan 100.000 unruk wisatawan mancanegara</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Periode Musim Kemarau pada bulan April hingga Oktober untuk cuaca cerah dan kesempatan melihat sunrise dan fenomena "Negeri di Atas Awan"</li>
+                    <li><strong>Transportasi:</strong> Anda dapat menggunakan kendaraan pribadi atau menyewa mobil/sepeda motor menuju Desa Tamansari, Kecamatan Licin, di mana pos pendakian berada.</li>
+                    <li><strong>Akomodasi:</strong> Karena lokasinya yang berdekatan dengan Kawah Ijen, pilihan akomodasi tersedia di sekitar area tersebut.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Dilarang Membuang Sampah Sembarangan</li>
+                    <li> Dilarang Membuat Api Unggun Sembarangan</li>
+                    <li> Dilarang Merusak Flora dan Fauna</li>
+                    <li> Dilarang Melakukan Vandalisme</li>
+                    <li> Menjaga Ketenangan</li>
+                    <li> Mematuhi Jalur dan Arahan Petugas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

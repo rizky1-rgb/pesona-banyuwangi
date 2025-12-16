@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/raung.jpg" alt="" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/raung.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Gunung Raung</h1>
+            <p> Gunung berapi aktif dengan kaldera kering terbesar di Jawa dan jalur pendakiannya yang menantang</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/raung2.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung4.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung5.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung6.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Gunung Raung adalah gunung berapi aktif di Jawa Timur (perbatasan Banyuwangi, Bondowoso, Jember) dengan ketinggian sekitar 3.344 mdpl, dikenal karena kalderanya yang besar dan jalur 
+                     pendakiannya yang menantang, sering dijuluki "ibu dari ribuan bukit kecil di Jember" karena letusannya membentuk gumuk di Jember. Pendakiannya membutuhkan fisik kuat dan perlengkapan lengkap, 
+                     terutama saat musim kemarau, dengan jalur klasik seperti Sumberwringin dan Kalibaru yang terkenal ekstrem karena punggungan dan tepian kawahnya. 
+                </p>
+                
+                <h3>Keunikan Gunung Raung</h3>
+                <ul>
+                    <li><strong>Kaldera Raksasa:</strong> Memiliki kaldera elips terbesar di Pulau Jawa, dengan diameter sekitar 2 km dan kedalaman hingga 500 meter.</li>
+                    <li><strong>Gugusan Pegunungan:</strong> Bagian dari kompleks Pegunungan Ijen, membentuk batas hidrologi penting di ujung timur Jawa.</li>
+                    <li><strong>Empat Puncak:</strong> Memiliki empat puncak utama: Bendera, 17, Tusuk Gigi, dan Sejati (tertinggi). </li>
+                    <li><strong>Jalur Ekstrim:</strong> Terkenal dengan jalur pendakiannya yang sulit, terutama bagian "Jembatan Sirotol Mustaqim" yang menantang.</li>
+                    <li><strong>Lanskap Beragam:</strong> Menyajikan pemandangan hutan tropis, padang ilalang, hingga jalur bebatuan yang indah.</li>
+                    <li><strong>Tanpa Mata Air:</strong> Pendaki harus membawa persediaan air yang cukup karena tidak ada sumber air di jalur pendakian. </li>
+                    <li><strong>Pemandangan Spektakuler:</strong> Menawarkan pemandangan matahari terbit dan gugusan gunung lain seperti Ijen dari puncaknya, terlihat bahkan dari Bali. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Pendakian Gunung (Hiking/Mountaineering)</li>
+                    <li> Menikmati Pemandangan Kawah</li>
+                    <li> Berkemah (Camping) dan Menikmati Suasana Malam </li>
+                    <li> Mengunjungi Kawah Wurung</li>
+                    <li> Menikmati Air Terjun Kembar Legomoro dan Air Terjun Telunjuk Raung</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Perbatasan Kabupaten Banyuwangi, Bondowoso, dan Jember, Jawa Timur.</li>
+                    <li><strong>Biaya Masuk:</strong> Paket lengkap dari agen perjalanan yang mencakup semua kebutuhan pendakian dengan harga mulai Rp2.699.000 untuk 3H2M (3 hari 2 malam)</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim kemarau sangat disarankan karena jalur lebih aman dari licin. </li>
+                    <li><strong>Transportasi:</strong> Jalanan sudah cukup baik untuk kendaraan bermotor hingga basecamp.</li>
+                    <li><strong>Akomodasi:</strong> Penginapan di sekitar Kalibaru (seperti Hotel Raung View, Margo Utomo Eco Resort, Kallista Villas) hingga penginapan di kota Banyuwangi, serta pilihan berkemah di jalur pendakian</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Wajib mendaftar di basecamp</li>
+                    <li> Wajib menggunakan pemandu profesional atau minimal yang sudah 3x mendaki Raung</li>
+                    <li> Sangat ditekankan untuk tidak melampaui batas aman</li>
+                    <li> Sangat disarankan menggunakan porter air karena beratnya membawa air untuk seluruh jalur. </li>
+                    <li> Dilarang mengotori gunung, membuang sampah sembarangan, vandalisme, dan merusak flora/fauna.</li>
+                    <li> Dilarang memotong jalur pendakian.</li>
+                    <li> Dilarang memaksakan diri jika kondisi tidak memungkinkan. </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

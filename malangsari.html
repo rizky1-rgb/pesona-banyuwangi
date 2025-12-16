@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/malsar4.jpg" alt="Alas Purwo" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/lv_0_20251208152509.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Bukit Malangsari</h1>
+            <p>Kombinasi unik antara keindahan alam pegunungan dan suasana perkebunan yang tenang.</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/malsar1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/malsar2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/malsar3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/malsar4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Bukit Malangsari atau yang lebih dikenal sebagai kawasan Kebun Malangsari di Kalibaru, Banyuwangi.
+                    Kawasan ini merupakan bagian dari area perkebunan yang dikelola oleh PTPN XII dan terkenal dengan pemandangan alamnya yang sejuk dan asri.
+                </p>
+                
+                <h3>Keunikan Bukit Malangsari</h3>
+                <ul>
+                    <li><strong>Pemandangan Yang Memukau:</strong>  Menawarkan panorama hijau luas yang menawan, bahkan disebut mirip dengan pemandangan di Bromo tanpa harus jauh-jauh ke sana, terutama saat pagi hari.</li>
+                    <li><strong>Terselimut Kabut:</strong> Keindahannya makin dramatis ketika awan atau kabut tipis turun menutupi sebagian bukit, menciptakan suasana syahdu dan magis.</li>
+                    <li><strong>Suasana Alami & Sejuk:</strong> Tempat ini sangat alami, cocok untuk melepaskan penat dari hiruk-pikuk perkotaan, dengan gazebo untuk bersantai menikmati panorama.</li>
+                    <li><strong>Pemanfaatan Lahan Produktif:</strong> Awalnya adalah lahan kurang produktif (tanaman selada air), lalu diubah menjadi destinasi wisata oleh warga (Pokdarwis Banyu Kuwung) dan pemilik lahan menghibahkannya, menggerakkan ekonomi desa.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li>Menikmati sunrise dengan pemandangan negri diatas awan</li>
+                    <li>Menjelajah perkebunan yang memberikan suasana pedesaan yang tenang</li>
+                    <li>Menikmati suasana pedesaan yang damai, jauh dari keramaian kota</li>
+                    <li>Tracking ringan sambil menikmati keindahan alam yang masih asri</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong>PTPN XII Kebun Malangsari, Watulempit, Kebonrejo, Kec. Kalibaru, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> biaya masuk ke area perkebunan umum Malangsari terkadang gratis atau sangat minimal</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim Kemarau (April/Mei hingga Oktober) pada Pagi Hari Dini (05.00 - 07.00 WIB) dan Sore Hari (16.00 - 18.00 WIB)</li>
+                    <li><strong>Transportasi:</strong> Kondisi jalan menuju kebun cukup baik, namun karena melewati perkebunan, petunjuk jalan mungkin minimal.</li>
+                    <li><strong>Akomodasi:</strong> 
+                        Beberapa laporan menyebutkan bahwa di area perkebunan ini juga tersedia fasilitas untuk berkemah (Bumi Perkemahan) atau glamping 
+                        (glamour camping) dan cottage bagi Anda yang ingin menginap dan merasakan sejuknya udara pegunungan lebih lama.
+                    </li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li>Dilarang merusak lingkungan dan membuang sampah sembarangan</li>
+                    <li>Jaga jarak dan jangan mengganggu aktivitas para petani atau pekerja kebun</li>
+                    <li>Ikuti petunjuk arah dan jangan melewati area yang ditandai sebagai terlarang atau berbahaya</li>
+                    <li>Jalur di perkebunan bisa licin, terutama setelah hujan jadi pengunjung diharapkan untuk  berhati hati saat melakukan tracking</li>
+                    <li>Jangan memanjat atau merusak fasilitas/tanaman demi mendapatkan foto yang bagus.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

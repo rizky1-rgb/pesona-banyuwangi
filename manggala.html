@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/manggala.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Candi Manggala Yosomulyo</h1>
+            <p> menawarkan suasana tenang dan edukasi tentang budaya serta ajaran Buddha, termasuk patung-patung dan relief yang menggambarkan perjalanan hidup Sang Buddha.</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/manggala2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/manggala3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/manggala4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Dikenal dengan nama Candi Manggala. Ini adalah destinasi wisata religi baru dan bukan candi peninggalan kerajaan kuno, melainkan bangunan 
+                    modern yang digunakan sebagai tempat ibadah umat Buddha. Candi Manggala menjadi daya tarik baru di Banyuwangi, menawarkan suasana tenang 
+                    dan edukasi tentang budaya serta ajaran Buddha, termasuk patung-patung dan relief yang menggambarkan perjalanan hidup Sang Buddha. 
+                    Masyarakat setempat menganggapnya sebagai simbol harmoni dan kebanggaan kolektif. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Candi Modern yang Fungsional:</strong> Berbeda dari kebanyakan candi di Indonesia yang merupakan peninggalan sejarah kuno, Candi Manggala adalah bangunan modern yang masih aktif digunakan sebagai tempat ibadah umat Buddha, berdiri di belakang Vihara Dhamma Harja.</li>
+                    <li><strong>Arsitektur Mirip Miniatur Borobudur:</strong> Desainnya yang megah sering digambarkan sebagai miniatur Candi Borobudur, menjadikannya daya tarik visual tersendiri di wilayah Banyuwangi. Pengunjung dapat merasakan nuansa mirip Borobudur tanpa harus pergi jauh ke Magelang.</li>
+                    <li><strong>Simbol Toleransi dan Akulturasi:</strong> Keberadaannya di tengah masyarakat yang majemuk menjadikannya simbol penting toleransi agama dan akulturasi budaya di Desa Yosomulyo, Banyuwangi.</li>
+                    <li><strong>Destinasi Wisata Religi Baru:</strong> Meskipun tempat ibadah aktif, candi ini juga dibuka untuk umum sebagai objek wisata religi baru, menarik ribuan pengunjung setiap akhir pekan dan menjadi ikon baru pariwisata di Banyuwangi.</li>
+                    <li><strong>Edukasi dan Instagrammable:</strong> Selain sebagai tempat ibadah, candi ini menawarkan pengalaman belajar tentang seni, sejarah, dan ajaran Buddha, serta menyediakan banyak spot foto yang menarik dan estetis bagi pengunjung. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Menikmati Arsitektur</li>
+                    <li> Mempelajari Lebih Dalam Tentang Budaya dan Ajaran Budaya</li>
+                    <li> Menikmati Suasana Tenang</li>
+                    <li> Swafoto dan Mengabadikan Momen Kunjungan</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Sidorejo Wetan, Desa Yosomulyo, Kecamatan Gambiran, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> seharga Rp 5.000 per orang (harga mungkin berubah). </li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pagi atau sore hari untuk menghindari panas matahari yang terik, terutama mengingat aktivitas yang dapat dilakukan lebih banyak di luar ruangan.</li>
+                    <li><strong>Transportasi:</strong> Destinasi ini dapat di akses dengan berbagai kendaraan mulai dari kendaraan peribadi hingga bus wisata</li>
+                    <li><strong>Akomodasi:</strong> Sebagai pusat pariwisata yang sedang berkembang, terdapat beberapa pilihan akomodasi di sekitar Candi Manggala dan area Banyuwangi lainnya seperti hotel dan penginapan atau guest house</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menggunakan Pakaian yang Sopan</li>
+                    <li> Menjaga Ketertiban</li>
+                    <li> MenghormatibProsesi Ibadah</li>
+                    <li> Dilarang Merusak Area Candi</li>
+                    <li> Tidak Memanjat Stupa atau Struktur Candi</li>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Tidak Berfoto Berlebihan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

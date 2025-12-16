@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/green-island.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Green Island</h1>
+            <p> Destinasi wisata alam "Raja Ampatnya Banyuwangi" dengan keindahan alam yang menawan dengan panorama indah </p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/island1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/island2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/island3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/island4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/island5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/island6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    "Green Island Banyuwangi" merujuk pada destinasi wisata alam yang menawan di Kabupaten Banyuwangi. Terdapat dua lokasi utama yang sering dikaitkan dengan nama 
+                    "hijau" di area tersebut: Pulau Hijau (Green Island) yang berdekatan dengan Pulau Bedil, dan Teluk Hijau (Green Bay) yang berada di Taman Nasional Meru Betiri.
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Lanskap "Dua Dunia" (Bukit dan Laut):</strong> Green Island menawarkan pengalaman unik di mana Anda bisa menikmati pemandangan laut lepas dari atas bukit.</li>
+                    <li><strong>Spot Ikonik "Green Island Spot T":</strong> erdapat gundukan tanah yang menjorok ke laut, yang dikenal sebagai GREEN ISLAND SPOT T karena bentuknya menyerupai huruf 'T'</li>
+                    <li><strong>Perairan yang Jernih dan Eksotis:</strong> Air lautnya sangat bersih dan jernih, memungkinkan kegiatan snorkeling dan freediving yang memuaskan untuk melihat terumbu karang dan biota laut.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Menikmati Pemandangan dari Puncak Kemuning (Trekking Ringan)</li>
+                    <li> Berfoto di Spot Ikonik</li>
+                    <li> Snorkeling dan Diving (Aktivitas Bahari)</li>
+                    <li> Bersantai dan Berjemur di Pantai</li>
+                    <li> Island Hopping</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Pancer, Desa Sumberagung, Kecamatan Pesanggaran, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp 250.000 - Rp 350.000/rombongan untuk sewa perahu</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pada saat musim kemarau, pagi hari atau saat air surut</li>
+                    <li><strong>Transportasi:</strong> dapat di akses dengan kendaraan pribadi menuju pantai Mustika dan dilanjut menggunakan perahu nelayan untuk menuju ke Green Island</li>
+                    <li><strong>Akomodasi:</strong> </li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Wajib Menggunakan Pelampung saat Menyeberang</li>
+                    <li> Berhati-hati Saat Snorkeling/Berenang</li>
+                    <li> Dilarang Membuang Sampah</li>
+                    <li> Dilarang Merusak Terumbu Karang</li>
+                    <li> Dilarang Mengambil Flora dan Fauna</li>
+                    <li> Patuhi Pemandu Lokal</li>
+                    <li> Persiapan Mandiri</li>
+                    <li> Berhati-hati Saat Foto Khususnya di GREEN ISLAND SPOT T</li>
+                    <li> Jaga Kebersihan Area Puncak</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

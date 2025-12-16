@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/parang-ireng.jpeg" alt="" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/ireng.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Pantai Parang Ireng</h1>
+            <p> Pantai unik dengan batuan vulkanik berwarna hitam dan pasir gotri berukuran besar</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/ireng2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ireng3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ireng4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ireng5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ireng6.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ireng7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Pantai Parang Ireng adalah salah satu permata tersembunyi yang eksotis di Kabupaten Banyuwangi, Jawa Timur, dan merupakan bagian dari kawasan 
+                    Taman Nasional Alas Purwo (TN Alas Purwo). Nama "Parang Ireng" sendiri berasal dari bahasa Jawa, yang berarti "Batu Hitam" 
+                    (Parang = batu karang, Ireng = hitam), mengacu pada formasi bebatuan lava berwarna gelap yang menjadi ciri khas utama pantai ini.
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Formasi Batuan Lava Hitam (Parang Ireng):</strong> Keunikan paling mencolok adalah keberadaan bebatuan karang besar yang tersusun dari lava beku berwarna hitam pekat</li>
+                    <li><strong>Pasir Gotri:</strong> Pantai ini dikenal memiliki jenis pasir yang tidak biasa, yang sering disebut "pasir gotri" karena butirannya yang relatif lebih besar dan membulat dibandingkan pasir halus biasa, menyerupai kelereng kecil atau gotri.</li>
+                    <li><strong>Tersembunyi dalam Kawasan Konservasi:</strong> Akses yang sulit membuat pantai ini masih sangat alami, asri, dan terawat (sering disebut perawan) serta sepi pengunjung, cocok bagi Anda yang mencari ketenangan dan keindahan alam murni.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Eksplorasi & Fotografi</li>
+                    <li> Menjelajahi Formasi Batuan</li>
+                    <li> Mengamati Pasir Gotri</li>
+                    <li> Menikmati Kesunyian</li>
+                    <li> Relaksasi dan Menikmati Alam</li>
+                    <li> Menikmati Sunset</li>
+                    <li> Trekking dari Pos Pancur</li>
+                    <li> Piknik Sederhana</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Berada di dalam kawasan Taman Nasional Alas Purwo (TN Alas Purwo)., Purworejo, Kalipait, Kec. Tegaldlimo, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> sekitar Rp 5.000 per orang untuk wisatawan domestik dan Sekitar Rp 150.000 per orang untuk wisatawan mancanegara</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim Kemarau (sekitar April hingga Oktober) pada Pagi hari untuk menikmati suasana yang tenang dan udara segar.</li>
+                    <li><strong>Transportasi:</strong> Jarak sekitar 61 km, waktu tempuh sekitar 2 jam menggunakan mobil atau motor.</li>
+                    <li><strong>Akomodasi:</strong> Akomodasi terdekat biasanya tersedia di luar kawasan TN Alas Purwo, atau di area yang lebih ramai seperti kota Banyuwangi atau sekitar area destinasi wisata lain di Tegaldlimo.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Wajib melapor dan membayar tiket masuk di Pos Pancur</li>
+                    <li> Dilarang keras melakukan perburuan, menangkap, melukai, atau membunuh satwa liar</li>
+                    <li> Dilarang mengambil tumbuhan, bunga, atau benda-benda alam</li>
+                    <li> Wajib membawa kembali semua sampah keluar dari kawasan Taman Nasional.</li>
+                    <li> Selalu patuhi instruksi dari petugas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/Pmerah.jpeg" alt="" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/pm.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Pulau Merah</h1>
+            <p> Destinasi wisata dengan pemandangan pulau berbias cahaya kemerahan</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/merah1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/merah2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/merah3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/merah4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/merah5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/merah6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Pulau Merah adalah destinasi wisata pantai populer yang terletak di Banyuwangi, Jawa Timur. Pantai ini terkenal dengan bukit kecil berwarna 
+                    kemerahan di tepi pantai yang bisa diakses dengan berjalan kaki saat air surut, dan merupakan lokasi yang sangat baik untuk menikmati 
+                    matahari terbenam yang indah. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Pulau Kecil Bertanah Merah:</strong> Keunikan yang paling menonjol adalah keberadaan sebuah bukit kecil di dekat bibir pantai yang tanahnya berwarna merah, mirip batu bata.</li>
+                    <li><strong>Destinasi Selancar (Surfing) Pemula:</strong> Meskipun ombaknya terkenal, pantai ini memiliki gulungan ombak yang relatif stabil dan tidak terlalu besar, membuatnya ideal serta direkomendasikan untuk peselancar pemula, baik lokal maupun internasional.</li>
+                    <li><strong>Pemandangan Matahari Terbenam yang Memukau:</strong> Pantai ini menawarkan pemandangan matahari terbenam yang sangat indah dan romantis. Cahaya matahari terbenam yang memantul di air laut menambah pesona alamnya yang luar biasa.</li>
+                    <li><strong>Situs Warisan Geologi dan Wisata Religi:</strong> Kawasan ini juga merupakan situs warisan geologi dengan batuan tertua, menawarkan wawasan sejarah dan budaya. Selain itu, terdapat Pura Tawang Alun di dekatnya yang menjadi tempat ibadah dan ritual keagamaan umat Hindu, menambah dimensi wisata religi di area tersebut.</li>
+                    <li><strong>Pasir Putih yang Lembut:</strong> Selain bukit merahnya, pantai ini memiliki garis pantai berpasir putih lembut sepanjang 3 km, cocok untuk bersantai dan menikmati suasana tropis yang tenang. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Berselancar atau Surfing</li>
+                    <li> Tur dengan Perahu</li>
+                    <li> Snorkeling</li>
+                    <li> Menikmati Matahari Terbenam (Sunset)</li>
+                    <li> Mengunjungi "Pulau" Merah</li>
+                    <li> Bersantai di Tepi Pantai</li>
+                    <li> Wisata Religi</li>
+                    <li> Belajar Sejarah dan Geologi</li>
+                    <li> Wisata Kuliner Khas</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:Dusun Pancer, Desa Sumberagung, Kecamatan Pesanggaran, Kabupaten Banyuwangi</strong> </li>
+                    <li><strong>Biaya Masuk:</strong> Rp 10.000 - Rp 15.000 per orang</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pada saat weekday, pukul 15.00 - 17.00 WIB</li>
+                    <li><strong>Transportasi:</strong> kendaraan pribadi (mobil atau motor). Perjalanan memakan waktu sekitar 1,5 hingga 2 jam. </li>
+                    <li><strong>Akomodasi:</strong> Di sekitar area Pulau Merah, terdapat banyak pilihan penginapan, mulai dari guest house yang ramah di kantong hingga resort.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Patuhi Petunjuk Penjaga Pantai/SAR</li>
+                    <li> Perhatikan Bendera Peringatan</li>
+                    <li> Tidak Membuang Sampah Sembarangan</li>
+                    <li> Menghormati Adat Lokal</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

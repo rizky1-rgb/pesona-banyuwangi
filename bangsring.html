@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/bangsring.jpeg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Bangsring Underwater</h1>
+            <p> Wisata terumbu karang bawah laut dan konservasi Hiu</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring7.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring8.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bangsring6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Bangsring Underwater (Bunder) adalah destinasi ekowisata bahari populer yang terletak di Desa Bangsring, Kecamatan Wongsorejo, Kabupaten Banyuwangi. 
+                    Tempat ini terkenal karena upaya konservasi terumbu karang yang sukses dan menawarkan berbagai aktivitas air yang menarik dan edukatif bagi pengunjung. 
+                </p>
+                
+                <h3>Keunikan Bangsring Underwater</h3>
+                <ul>
+                    <li><strong>Transformasi Konservasi Berbasis Masyarakat:</strong> Keunikan terbesar Bunder adalah inisiatif restorasi yang sepenuhnya digerakkan oleh Kelompok Masyarakat Pengawas (Pokmaswas) Samudra Bhakti setempat. Mereka berhasil mengubah pola pikir nelayan dari merusak menjadi melestarikan.</li>
+                    <li><strong>Adanya "Rumah Apung":</strong> Rumah apung ikonik di tengah laut menjadi pusat aktivitas yang multifungsi. Ini bukan sekadar dermaga, melainkan juga berfungsi sebagai Pusat Edukasi, Klinik Ikan, juga Penangkaran Hiu dan Penyu</li>
+                    <li><strong>Sensasi Berenang Bersama Hiu:</strong> Salah satu pengalaman paling unik yang ditawarkan adalah kesempatan untuk berenang dan berinteraksi langsung dengan anak hiu yang ditangkarkan di keramba samping rumah apung. </li>
+                    <li><strong>"Museum" Terumbu Karang Buatan:</strong> Di bawah laut, terdapat berbagai struktur buatan dari besi beton dan media tanam lainnya yang berfungsi sebagai terumbu karang. Desainnya bervariasi, menciptakan pemandangan unik di dasar laut yang menjadi daya tarik snorkeling dan diving tersendiri, serta mempercepat pemulihan ekosistem.</li>
+                    <li><strong>Keanekaragaman Hayati yang Pulih Cepat:</strong> Berkat upaya konservasi, ekosistem di Bunder pulih dengan sangat cepat. Pengunjung dapat dengan mudah melihat ribuan ikan hias berwarna-warni, termasuk ikan badut (clownfish) atau "Nemo", hanya dengan snorkeling di kedalaman yang dangkal. </li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Snorkeling dan Diving</li>
+                    <li> Berinteraksi dengan Hiu di Rumah Apung</li>
+                    <li> Naik Perahu dan Wahana Air</li>
+                    <li> Edukasi dan Konservasi</li>
+                    <li> Wisata Kuliner dan Menikmati Suasana</li>
+                    <li> Berburu Foto di Spot Foto Instagramable</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Jl. Situbondo - Banyuwangi, Dusun Krajan, Desa Bangsring, Kecamatan Wongsorejo, Kabupaten Banyuwangi, Jawa Timur.</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp 5.000 - Rp 10.000 per orang.</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Periode terbaik adalah antara bulan April hingga Oktober</li>
+                    <li><strong>Transportasi:</strong> Menggunakan Kendaraan Pribadi (Mobil atau Motor) melalui jalan raya utama Banyuwangi menuju Situbondo</li>
+                    <li><strong>Akomodasi:</strong> Beberapa homestay lokal dan penginapan tersedia di sekitar area bagi yang ingin bermalam.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Mematuhi Aturan Berenang</li>
+                    <li> Tidak Merusak Biota Laut</li>
+                    <li> Mengikuti Arahan Saat Berinteraksi dengan Hiu</li>
+                    <li> Mematuhi Etika dan Norma Lokal</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

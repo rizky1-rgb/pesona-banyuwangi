@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/lider.jpg" alt="" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/lider.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Air Terjun Lider</h1>
+            <p> Air terjun dengan ketinggian yang impresif dan debit air yang cukup deras</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/lider1.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider2.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider3.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider4.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider5.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider6.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Air Terjun Lider adalah destinasi wisata alam yang terletak di lereng Gunung Raung, tepatnya di Kecamatan Songgon, Banyuwangi.
+                    Air terjun ini terkenal karena ketinggiannya yang impresif, diperkirakan mencapai sekitar 60 meter. Airnya mengalir deras dari 
+                    tebing bebatuan curam yang diselimuti lumut dan vegetasi hijau lebat, menciptakan pemandangan yang dramatis dan sangat menyejukkan mata.
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Ketinggian dan Debit Air:</strong> Air Terjun Lider termasuk air terjun yang cukup tinggi di Banyuwangi, dengan ketinggian yang diperkirakan mencapai sekitar 60 meter. Debit airnya cukup deras, terutama saat musim hujan, menciptakan suara gemuruh yang khas.</li>
+                    <li><strong>Kealamian Lingkungan:</strong> Lokasinya yang tersembunyi di lereng Gunung Raung menjadikan suasana di sekitar air terjun masih sangat alami. Pengunjung akan melewati hutan dan perkebunan dalam perjalanan menuju lokasi, menyajikan udara segar dan pemandangan hijau yang menyejukkan.</li>
+                    <li><strong>Kolam Alami:</strong> Di bawah air terjun terdapat kolam alami yang bisa digunakan untuk berendam atau sekadar menikmati kesejukan air. Airnya sangat jernih dan dingin, langsung dari sumber mata air pegunungan.</li>
+                    <li><strong>Trek yang Menarik:</strong> Perjalanan (trekking) menuju air terjun itu sendiri menjadi daya tarik. Pengunjung harus berjalan kaki menyusuri sungai dan melewati jalur yang cukup menantang namun indah, melewati bebatuan dan pepohonan rindang.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Trekking dan Hiking</li>
+                    <li> Menikmati Keindahan Air Terjun</li>
+                    <li> Bermain Air di Kolam Alami</li>
+                    <li> Piknik Sederhana</li>
+                    <li> Berfoto</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Curahjati, Desa Sumberarum, Kecamatan Songgon, Kabupaten Banyuwangi.</li>
+                    <li><strong>Biaya Masuk:</strong> Rp10.000 per orang</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim Kemarau (sekitar Mei - September)</li>
+                    <li><strong>Transportasi:</strong> Dapat diakses dengan kendaraan pribadi dengan jarak tempuh 25-27 km dari pusat Kota Banyuwangi dan estimasi waktu tempuh sekitar 1,5 hingga 2 jam</li>
+                    <li><strong>Akomodasi:</strong> Karena Air Terjun Lider berada di area pedesaan Songgon, pilihan hotel berbintang mungkin terbatas. Namun, ada beberapa pilihan penginapan menarik di sekitar Songgon atau di kota terdekat yang menjadi titik basecamp untuk eksplorasi Banyuwangi seperti Ijen atau kota utama</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Dilarang Berenang terlalu dekat dengan jatuhan air terjun</li>
+                    <li> Wajib Berhati-hati saat Trekking karena jalur licin dan berbatu.</li>
+                    <li> Perhatikan Jam Kunjungan</li>
+                    <li> Dilarang Membuang Sampah Sembarangan.</li>
+                    <li> Dilarang Merusak atau Mengambil Tanaman/Satwa di area hutan.</li>
+                    <li> Dilarang Mencoret-coret fasilitas atau batu-batuan alam.</li>
+                    <li> Hormati Adat dan Budaya Lokal.</li>
+                    <li> Berpakaian Sopan saat berada di area desa.</li>
+                    <li> Menjaga Sikap dan Ucapan.</li>
+                    <li> Wajib Melapor dan Membeli Tiket di pos masuk.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

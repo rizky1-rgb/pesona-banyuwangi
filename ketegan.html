@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/ketegan.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Air Terjun Ketegan</h1>
+            <p> destinasi wisata alam tersembunyi yang terletak di Dusun Krajan, Kec. Glagah</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/ketegan.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ketegan2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ketegan3.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Air Terjun Ketegan adalah destinasi wisata alam yang terletak di Dusun Krajan, Desa Kampunganyar, Kecamatan Glagah, Kabupaten Banyuwangi. 
+                    Tempat ini unik karena berada dalam satu kawasan dengan Air Terjun Jagir, menawarkan dua pengalaman alam yang berbeda dalam satu kunjungan.
+                </p>
+                
+                <h3>Keunikan Air Terjun Ketegan</h3>
+                <ul>
+                    <li><strong>Satu Kawasan dengan Air Terjun Jagir:</strong> Pengunjung dapat mengunjungi dua air terjun berbeda (Ketegan dan Jagir) hanya dalam satu area wisata. Meskipun berdekatan, karakter keduanya berbeda.</li>
+                    <li><strong>Suasana Tenang dan Hening:</strong> Berbeda dengan saudaranya, Air Terjun Jagir yang lebih populer dan sering ramai, Ketegan menawarkan suasana yang lebih tenang, damai, dan alami, cocok untuk mencari ketenangan.</li>
+                    <li><strong>Akses yang Mudah:</strong> Meskipun berada di lokasi pedesaan, akses menuju air terjun ini relatif mudah dijangkau baik dengan kendaraan pribadi maupun umum, dan tidak memerlukan trekking yang terlalu berat.</li>
+                    <li><strong>Kolam Alami yang Jernih:</strong> Terdapat kolam penampungan alami di bawah air terjun dengan air yang sangat jernih, memungkinkan pengunjung untuk berenang atau berendam dengan aman.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Menikmati Ketenangan Alam</li>
+                    <li> Berenang atau Berendam</li>
+                    <li> Piknik Santai</li>
+                    <li> Trekking Ringan</li>
+                    <li> Mengunjungi Ari Terjun Jagir</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Krajan, Desa Kampunganyar, Kecamatan Glagah, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp 5.000 per orang.</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Disarankan datang pada musim kemarau (sekitar April hingga Oktober)</li>
+                    <li><strong>Transportasi:</strong> Anda dapat menggunakan mobil atau sepeda motor. Rutenya mudah diakses dan sudah tertera di aplikasi peta online. Tempat parkir tersedia di lokasi.</li>
+                    <li><strong>Akomodasi:</strong> Karena Air Terjun Ketegan dekat dengan pusat kota Banyuwangi dan area Kawah Ijen, terdapat banyak pilihan penginapan di sekitar area Glagah atau pusat kota</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Menjaga Keselamatan saat Berenang</li>
+                    <li> Berperilaku Sopan</li>
+                    <li> Menghormati Alam</li>
+                    <li> Tidak Merusak Fasilitas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

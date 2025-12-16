@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/tabuhan3.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Pulau Tabuhan</h1>
+            <p> destinasi wisata bahari yang indah dan tersembunyi di Banyuwangi</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan.jpeg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan6.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/tabuhan7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    Pulau Tabuhan adalah destinasi wisata bahari yang indah dan tersembunyi di Banyuwangi, Jawa Timur, terkenal dengan 
+                    pantai berpasir putih dan air laut yang jernih. Pulau kecil tak berpenghuni ini terletak di tengah Selat Bali, antara 
+                    Pulau Jawa dan Bali, dan menawarkan suasana yang tenang dan alami.  
+                </p>
+                
+                <h3>Keunikan Pulau Tabuhan</h3>
+                <ul>
+                    <li><strong>Satu-satunya Spot Kitesurfing dan Windsurfing di Jawa Timur:</strong> 
+                        Keunikan utama pulau ini adalah kondisi anginnya yang ideal, terutama selama musim kemarau (Mei hingga September). 
+                        Kecepatan angin di sini relatif stabil dan kencang, menjadikannya lokasi favorit dan satu-satunya yang optimal di 
+                        Jawa Timur untuk olahraga ekstrem kitesurfing dan windsurfing internasional.</li>
+                    <li><strong>Pulau Tak Berpenghuni Yang Masih Sangat Alami:</strong> 
+                        Pulau ini adalah pulau kecil yang belum tersentuh pembangunan besar dan tidak memiliki penduduk tetap. Hal ini 
+                        menjaga keaslian ekosistemnya, menawarkan suasana yang sangat tenang, bersih, dan alami, jauh dari keramaian kota</li>
+                    <li><strong>Lokasi Strategis di Tengah Selat Bali:</strong> 
+                        Posisinya yang berada persis di tengah Selat Bali membuat pemandangan dari pulau ini sangat indah. Pengunjung dapat 
+                        melihat pemandangan Gunung Agung di Bali di satu sisi dan daratan Pulau Jawa (Banyuwangi) di sisi lainnya secara bersamaan</li>
+                    <li><strong>Fenomena "Pasir Timbul" atau Pulau Gusung:</strong> 
+                        Terkadang, terutama saat air surut, muncul daratan pasir putih yang lebih luas atau bahkan pulau pasir kecil di 
+                        sekitar area utama Pulau Tabuhan, menambah daya tarik visual yang unik bagi pengunjung</li>
+                    <li><strong>Akses Mudah ke Spot Bawah Laut Lainnya:</strong> 
+                        Meskipun terumbu karang di dekat bibir pantai Tabuhan perlu perbaikan, lokasinya sangat dekat dengan area konservasi 
+                        Bangsring Underwater dan Pulau Menjangan di Bali, menjadikannya titik tolak yang ideal untuk eksplorasi bahari yang lebih luas.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Snorkeling dan Diving</li>
+                    <li> Olahraga Angin (Kitesurfing & Windsurfing)</li>
+                    <li> Berjemur dan Bersantai di Pantai</li>
+                    <li> Menikmati Pemandangan dan Mengabadikannya</li>
+                    <li> Island Hopping (Tur Antar Pulau)</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Desa Bengkak, Kecamatan Wongsorejo, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp7.000 hingga Rp10.000 per orang </li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim kemarau, khususnya antara Mei hingga September.</li>
+                    <li><strong>Transportasi:</strong> Menggunakan perahu motor atau speed boat dengan estimasi waktu 20 hingga 30 menit</li>
+                    <li><strong>Akomodasi:</strong> Untuk akomodasi, tersedia banyak pilihan di daratan Banyuwangi, terutama di area sekitar titik penyeberangan di Wongsorejo atau di pusat Kota Banyuwangi.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Selalu Menjaga Kebersihan</li>
+                    <li> Menjaga Etika dan Norma Lokal</li>
+                    <li> Tidak Merusak Biota Laut </li>
+                    <li> Mematuhi Protokol Kesehatan dan Keselamatan</li>
+                    <li> Tidak Merusak Fasilitas Tempat Wisata</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

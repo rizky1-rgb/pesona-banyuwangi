@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/Djawatan.jpeg" alt="" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/vid/djawatan.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>De Djawatan</h1>
+            <p> Hutan dengan pohon Trembesi raksasa berusia ratusan tahun yang diselimuti tumbuhan epifit yang menciptakan suasana seperti pada film The Lord of the Rings.</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/djawatan7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                    De Djawatan adalah kawasan hutan yang terletak di Desa Benculuk, Kecamatan Cluring, Kabupaten Banyuwangi. Hutan ini dipenuhi dengan pohon 
+                    trembesi yang telah berusia ratusan tahun, menciptakan suasana yang sejuk dan magis. Luas hutan ini sekitar 3,8 hektar dan dikelola oleh 
+                    Perhutani.
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Pohon Trembesi Raksasa:</strong> Hutan ini didominasi oleh ratusan pohon Trembesi (Ki Hujan) yang usianya mencapai 100 hingga 150 tahun. Batang dan cabangnya sangat besar dan menjulang tinggi, menciptakan kanopi yang sangat teduh.</li>
+                    <li><strong>Karakteristik Mistis:</strong> Pepohonan trembesi ini hampir seluruhnya diselimuti oleh tumbuhan epifit, lumut, dan akar gantung berwarna hijau gelap. Kombinasi ini memberikan kesan kuno, lembab, dan misterius, sehingga sering disamakan dengan Hutan Fangorn dalam kisah The Lord of the Rings atau hutan-hutan di film fantasi Disney.</li>
+                    <li><strong>Cahaya Dramatis:</strong> Karena kanopi yang sangat rapat, cahaya matahari yang masuk ke lantai hutan menjadi sangat minim dan terfilter. Saat pagi atau sore, berkas cahaya (disebut sun rays atau Tindall effect) yang menembus dedaunan menciptakan suasana yang sangat dramatis dan fotogenik.</li>
+                    <li><strong>Sejarah Eks-TPK:</strong> Awalnya, kawasan ini adalah Tempat Penimbunan Kayu (TPK) milik Perhutani. Ini menjelaskan mengapa pohon-pohon yang ada di sana ditanam dan diatur sedemikian rupa, bukan tumbuh liar sepenuhnya, meskipun kini tampilannya sudah alami dan artistik.</li>
+                    <li><strong>Daya Tarik Fotografi:</strong> Keindahan dan keunikan visualnya menjadikannya salah satu lokasi pre-wedding dan fotografi lanskap yang paling dicari di Jawa Timur, terkenal dengan suasana hutan yang dark fantasy namun romantis.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Berfoto di Hutan Trembesi</li>
+                    <li> Berburu Sun Rays</li>
+                    <li> Menaiki ATV Off-road</li>
+                    <li> Piknik Santai</li>
+                    <li> Menikmati Keheningan</li>
+                    <li> Menjelajah Sejarah Bangunan Tua</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Purwosari, Benculuk, Kec. Cluring, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp 5.000 - Rp 6.000 per orang.</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Pada musim kemarau di bulan Juni - September, Pagi atau Sore hari</li>
+                    <li><strong>Transportasi:</strong> Dapat diakses dengan berbagai kendaraan dengan waktu tempuh kurang dari 1 jam dari pusat Kota Banyuwangi </li>
+                    <li><strong>Akomodasi:</strong> Pilihlah hotel di area pusat kota Banyuwangi (Kecamatan Banyuwangi atau sekitarnya). Area ini menawarkan lebih banyak pilihan hotel, mulai dari budget hingga bintang empat, serta akses mudah ke kuliner dan fasilitas umum lainnya. Anda kemudian bisa melakukan perjalanan satu hari (sekitar 1 jam) pulang-pergi ke De Djawatan.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Dilarang membuang sampah sembarangan</li>
+                    <li> Ikuti semua petunjuk arah dan rambu-rambu yang dipasang oleh pengelola.</li>
+                    <li> Untuk sesi foto komersial (seperti pre-wedding atau iklan), pengunjung wajib melapor dan mungkin dikenakan biaya izin khusus yang berbeda dari tiket masuk biasa.</li>
+                    <li> Jika Anda membawa hewan peliharaan (biasanya anjing atau kucing), pastikan hewan tersebut terikat tali (menggunakan leash) dan Anda bertanggung jawab penuh atas kebersihannya.</li>
+                    <li> Patuhi jam buka dan tutup.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

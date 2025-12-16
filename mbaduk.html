@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/mbaduk6.jpg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Muara Mbaduk</h1>
+            <p> Destinasi wisata pantai dan area camping yang sedang populer di Banyuwangi</p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/muaraMbaduk.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbaduk1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbaduk2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbaduk3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbaduk4.jpg " alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/mbaduk5.jpg " alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Muara Mbaduk adalah destinasi wisata pantai dan area camping yang sedang populer di Banyuwangi, Jawa Timur. Dikenal sebagai "surga tersembunyi" 
+                     bagi pecinta alam, tempat ini menawarkan perpaduan pemandangan pantai berpasir putih, laut biru, muara sungai yang menakjubkan, serta dikelilingi 
+                     oleh pemandangan gunung. 
+                </p>
+                
+                <h3>Keunikan </h3>
+                <ul>
+                    <li><strong>Konsep "Surga Tersembunyi" ( Hidden Gem ):</strong> Muara Mbaduk menawarkan ketenangan karena lokasinya yang relatif terpencil dan belum seramai destinasi utama lainnya di Banyuwangi. Hal ini menjadikannya tempat yang ideal bagi mereka yang mencari kedamaian dan ingin melarikan diri dari keramaian kota.</li>
+                    <li><strong>Pertemuan Tiga Elemen Alam:</strong> Keindahan lanskapnya yang unik merupakan daya tarik utama. Pengunjung dapat menemukan pantai berpasir putih, laut biru, dan muara sungai dalam satu area, dengan latar belakang perbukitan hijau yang asri.</li>
+                    <li><strong>Destinasi Utama untuk Camping dan Self-Healing:</strong> Tempat ini secara spesifik dikenal dan dipromosikan sebagai area camping ground yang menawarkan pengalaman bermalam di alam terbuka yang otentik. Suasana yang tenang dan pemandangan alam yang memukau sangat mendukung aktivitas self-healing atau relaksasi.</li>
+                    <li><strong>Keanekaragaman Hayati:</strong> Selain pemandangan, kawasan ini juga dikenal sebagai habitat penyu. Pengunjung berpotensi untuk mengamati penyu di habitat aslinya, memberikan nilai tambah edukatif dan pengalaman alam yang kaya.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Camping atau Berkemah</li>
+                    <li> Menikmati Sunrise dan Sunset</li>
+                    <li> Eksplorasi Pantai dan Muara</li>
+                    <li> Relaksasi atau Self-Healing</li>
+                    <li> Piknik di Area Muara</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Dusun Krajan, Desa Sarongan, Kecamatan Pesanggaran, Kabupaten Banyuwangi</li>
+                    <li><strong>Biaya Masuk:</strong> Diperkirakan sekitar Rp5.000 hingga Rp10.000 per orang</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Musim Kemarau (Sekitar Februari–Mei atau September–November)</li>
+                    <li><strong>Transportasi:</strong> Muara Mbaduk berjarak sekitar 82 km dari pusat Kota Banyuwangi, dengan waktu tempuh sekitar 2 jam 15 menit menggunakan kendaraan pribadi. </li>
+                    <li><strong>Akomodasi:</strong> Muara Mbaduk lebih dikenal sebagai area camping, dan banyak pengunjung memilih untuk bermalam di tenda daripada mencari penginapan formal di lokasi persis.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Menjaga Kebersihan</li>
+                    <li> Menghormati Adat Istiadat</li>
+                    <li> Tidak Merusak Fasilitas dan Alam</li>
+                    <li> Mematuhi Himbauan Petugas</li>
+                    <li> Selalu Membaca Peringatan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

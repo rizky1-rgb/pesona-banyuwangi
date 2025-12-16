@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Banyuwangi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Google untuk kemudahan membaca -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset dan pengaturan dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+            background-color: #ffffff; /* Mengubah latar belakang menjadi putih */
+        }
+
+        /* Skema warna */
+        :root {
+            --biru-langit: #87CEEB;
+            --biru-laut: #1E90FF;
+            --biru-tua: #003366;
+            --hijau-daun: #2E8B57;
+            --putih: #ffffff;
+            --abu-muda: #f8f9fa;
+        }
+
+        /* Header/Navbar */
+        header {
+            background-color: var(--biru-tua);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: var(--putih);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Sembunyikan nav links di semua ukuran layar */
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            color: var(--putih);
+            font-size: 1.5rem;
+        }
+
+        /* Sidebar Hamburger Menu */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 25vw; /* 1/4 layar untuk desktop */
+            height: 100vh;
+            background-color: var(--biru-tua);
+            z-index: 2000;
+            transition: var(--transisi);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        /* Untuk mobile */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 50vw; /* Setengah layar untuk mobile */
+            }
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 2rem;
+            padding: 2rem 1.5rem; /* Jarak dari pinggir kanan dan kiri */
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: var(--putih);
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-links a {
+            color: var(--putih);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            transition: var(--transisi);
+            border-bottom: 1px solid transparent;
+        }
+
+        .sidebar-links a:hover {
+            color: var(--biru-langit);
+            border-bottom: 1px solid var(--biru-langit);
+        }
+
+        /* Overlay untuk efek gelap saat sidebar terbuka */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transisi);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), 
+                        url('assets/img/gunung\ ranti.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--putih);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        /* Section Umum */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--biru-tua);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--hijau-daun);
+        }
+
+        /* Konten dengan gambar (dua kolom) */
+        .content-with-image {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .content-text {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .content-text h3 {
+            color: var(--biru-tua);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid var(--biru-langit); /* Border biru muda (biru-langit) */
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Banyuwangi Ethno Carnival */
+        .bec-section {
+            background-color: var(--abu-muda);
+        }
+
+        .bec-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .bec-text {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .bec-text h3 {
+            color: var(--biru-tua);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .bec-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .bec-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid var(--biru-langit); /* Border biru muda */
+            
+        }
+
+        .bec-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Sejarah Banyuwangi */
+        .history {
+            background-color: var(--putih);
+            text-align: center;
+        }
+
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .history-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Destinasi Populer */
+        .destinations {
+            background-color: var(--abu-muda);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .destination-card {
+            background: var(--putih);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 5px solid var(--biru-langit); /* Border biru muda */
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--biru-tua);
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--biru-laut);
+            color: var(--putih);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--biru-laut);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--biru-laut);
+            transform: scale(1.05);
+        }
+
+        /* Galeri */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            border: 5px solid var(--biru-langit); /* Border biru muda */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Budaya dan Informasi */
+        .culture-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .culture-card, .info-card {
+            background: var(--putih);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 5px solid var(--biru-langit); /* Border biru muda */
+        }
+
+        .culture-card h3, .info-card h3 {
+            color: var(--biru-tua);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        /* Testimoni */
+        .testimonials {
+            background: linear-gradient(135deg, var(--biru-langit), var(--hijau-daun));
+            color: var(--putih);
+        }
+
+        .testimonials .section-title {
+            color: var(--putih);
+        }
+
+        .testimonials .section-title::after {
+            background: var(--putih);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 5px solid var(--putih); /* Border putih untuk kontras */
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--biru-tua);
+            color: var(--putih);
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--biru-laut);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: var(--putih);
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--hijau-daun);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animasi Fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries untuk Responsif */
+        @media (max-width: 992px) {
+            .sejarah-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .interactive-images {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .interactive-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .ciri-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .saran-penyajian {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .sidebar {
+                width: 60vw; /* Lebih lebar untuk mobile kecil */
+            }
+            
+            .card-content {
+                padding: 1rem;
+            }
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #1E90FF, #003366);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, --abu-tua, --biru-laut);
+        }
+
+        .scroll-top-btn:active {
+            transform: translateY(-2px) scale(0.95);
+        }
+
+        .scroll-top-btn.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.3s linear;
+            stroke: white;
+            stroke-width: 4;
+            fill: transparent;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .arrow {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== CHAT BUTTON ===== */
+
+.bot-msg img {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    max-height: 220px;   /* agar tidak terlalu tinggi */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+/* Efek hover manis */
+.bot-msg img:hover {
+    transform: scale(1.03);
+}
+
+/* animasi titik mengetik */
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: #f2f7ff;
+    border-left: 4px solid #0b6dff;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 6px 0;
+}
+
+.typing span {
+    width: 6px;
+    height: 6px;
+    background: #0b6dff;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}
+
+#chatbot-btn {
+position: fixed;
+bottom: 40px;
+left: 40px;
+width: 60px;
+height: 60px;
+background: linear-gradient(45deg, #1E90FF, #003366);
+color: white;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+font-size: 20px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+#chatbot-btn:hover {
+transform: translateY(-5px) scale(1.1);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+background: linear-gradient(45deg,  #1E90FF, #003366);
+}
+
+@keyframes jump {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes bounce {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-4px);}
+}
+
+/* ===== CHAT WINDOW ===== */
+#chat-window {
+    position: fixed;
+    bottom: 100px;
+    left: 25px;
+    width: 360px;
+    height: 515px;
+    background: white;
+    border: 2px solid linear-gradient(45deg, #1E90FF, #003366);
+    border-radius: 15px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.25);
+    display:none;
+    flex-direction:column;
+}
+
+/* header */
+#chat-header {
+    background: linear-gradient(45deg, #1E90FF, #003366);
+    color:white;
+    padding:14px;
+    text-align:center;
+    font-weight:bold;
+    border-radius:15px 15px 0 0;
+}
+
+/* chat area */
+#chat-messages {
+    padding: 10px;
+    overflow-y: auto;
+    flex:1;
+    font-size:15px;
+}
+
+.user-msg, .bot-msg {
+    max-width: 85%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 10px;
+}
+
+.user-msg {
+    background: #d9edff;
+    margin-left: auto;
+}
+
+.bot-msg {
+    background: #f2f7ff;
+    border-left: 4px solid #0b6dff;
+}
+
+/* input box */
+#chat-input-area {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display:flex;
+    gap:6px;
+}
+
+#chat-input {
+    flex:1;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+#send-btn {
+    background:#1E90FF;
+    border:none;
+    color:white;
+    padding: 10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#send-btn:hover {
+    background: linear-gradient(45deg, #1E90FF, #003366);
+}
+
+        /* Animasi buka */
+@keyframes chatOpen {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Animasi tutup */
+@keyframes chatClose {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.7) translateY(40px);
+    }
+}
+
+/* Default state */
+#chat-window {
+    opacity: 0;
+    transform: scale(0.7) translateY(40px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar dengan hamburger menu -->
+    <header>
+        <nav class="navbar">
+            <a href="#hero" class="logo">Pesona Banyuwangi</a>
+            <div class="hamburger" id="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Hamburger Menu -->
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <button class="close-btn" id="closeSidebar">×</button>
+            <ul class="sidebar-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="test-kuliner.html">Kuliner Banyuwangi</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="destinasi.html">Destinasi Wisata</a></li>
+                <li><a href="tips&info.html">Informasi & Tips Wisata</a></li>
+                <li><a href="Transport.html">Transportasi</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <h1>Pesona Banyuwangi</h1>
+            <p>Temukan keindahan alam dan budaya yang memukau di ujung timur Pulau Jawa</p>
+        </div>
+    </section>
+
+    <!-- Sejarah Banyuwangi -->
+    <section class="history" id="sejarah">
+        <h2 class="section-title">Welcome To Banyuwangi</h2>
+        <div class="history-content">
+            <p>Banyuwangi merupakan kabupaten paling timur di Pulau Jawa yang memiliki sejarah panjang dan kaya. Nama "Banyuwangi" berasal dari bahasa Jawa yang berarti "air yang harum". Menurut legenda, nama ini diambil dari kisah Pangeran Samprang yang membuang bayi perempuan ke sungai karena dianggap membawa malapetaka, namun air sungai tersebut justru menjadi harum.</p>
+            <p>Secara historis, Banyuwangi pernah menjadi bagian dari Kerajaan Blambangan, kerajaan Hindu terakhir di Pulau Jawa yang berdiri sejak abad ke-13 hingga ke-18. Wilayah ini juga dikenal sebagai tempat pertemuan antara budaya Jawa dan Bali, yang tercermin dalam tradisi, seni, dan kehidupan masyarakatnya yang unik.</p>
+            <p>Pada masa kolonial Belanda, Banyuwangi menjadi pusat perkebunan dan perdagangan. Setelah kemerdekaan Indonesia, Banyuwangi berkembang menjadi salah satu destinasi pariwisata unggulan di Jawa Timur, terkenal dengan keindahan alamnya yang masih alami dan budaya yang kaya.</p>
+        </div>
+    </section>
+
+    <!-- Destinasi Wisata - Serpihan Surga Jawa Timur -->
+    <section id="destinasi-wisata">
+        <h2 class="section-title">Destinasi Wisata Banyuwangi</h2>
+        <div class="content-with-image">
+            <div class="content-text">
+                <h3>Serpihan Surga di Ujung Timur Jawa</h3>
+                <p>Banyuwangi sering dijuluki sebagai "serpihan surga Jawa Timur" karena kekayaan alamnya yang luar biasa. Dari gunung berapi aktif hingga Air Terjun Lider yang indah, setiap sudut Banyuwangi menyimpan keindahan yang memukau. Kawah Ijen dengan fenomena blue fire-nya yang spektakuler menjadi ikon pariwisata tidak hanya nasional tetapi juga internasional.</p>
+                <p>Destinasi wisata di Banyuwangi menawarkan pengalaman yang beragam - mulai dari petualangan hiking di Gunung Raung, eksplorasi hutan tropis di Taman Nasional Alas Purwo, hingga menikmati keindahan sunset di Pantai Plengkung yang masih alami. Setiap lokasi wisata memiliki karakteristik unik yang membuat Banyuwangi menjadi destinasi wajib bagi para pecinta alam dan petualangan.</p>
+                <p>Keragaman ekosistem mulai dari pegunungan, hutan tropis, savana, hingga garis pantai yang indah menjadikan Banyuwangi sebagai laboratorium alam terbuka yang sempurna untuk wisatawan yang ingin mengenal kekayaan biodiversitas Indonesia.</p>
+            </div>
+            <div class="content-image">
+                <img src="assets/img/ijen.jpg" alt="Kawah Ijen Blue Fire">
+            </div>
+        </div>
+    </section>
+
+    <!-- Keindahan Alam Banyuwangi -->
+    <section id="keindahan-alam">
+        <h2 class="section-title">Keindahan Alam Banyuwangi</h2>
+        <div class="content-with-image">
+            <div class="content-image">
+                <img src="assets/img/alasP.jpg" alt="Taman Nasional Alas Purwo">
+            </div>
+            <div class="content-text">
+                <h3>Alam yang Memukau dan Masih Perawan</h3>
+                <p>Keindahan alam Banyuwangi tidak hanya terletak pada keberagamannya, tetapi juga pada kondisinya yang masih sangat alami dan terjaga. Taman Nasional Alas Purwo, misalnya, merupakan salah satu hutan tropis terakhir di Jawa yang masih utuh, menjadi rumah bagi berbagai spesies flora dan fauna endemik yang langka.</p>
+                <p>Pantai-pantai di Banyuwangi menawarkan keindahan yang berbeda-beda. Pantai Merah dengan pasirnya yang unik berwarna pink, Pantai Teluk Hijau yang airnya berwarna hijau tosca, hingga Pantai Pulau Merah yang menjadi surga bagi para peselancar. Setiap pantai memiliki karakteristik dan keindahan tersendiri yang membuatnya istimewa.</p>
+                <p>Gunung-gunung di Banyuwangi seperti Gunung Raung, Gunung Ijen, dan Gunung Baluran tidak hanya menawarkan tantangan bagi para pendaki, tetapi juga panorama alam yang menakjubkan dari ketinggian. Kabut pagi yang menyelimuti lembah, matahari terbit yang spektakuler, dan keindahan landscape yang membentang luas membuat setiap perjalanan mendaki menjadi pengalaman tak terlupakan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinasi Populer -->
+    <section class="destinations" id="destinasi">
+        <h2 class="section-title">Destinasi Populer</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="assets/img/kawah-ijen.jpg" alt="Kawah Ijen" class="card-img">
+                <div class="card-content">
+                    <h3>Kawah Ijen</h3>
+                    <p>Fenomena blue fire yang hanya ada di dua tempat di dunia. Nikmati keindahan kawah asam terbesar di dunia.</p>
+                    <a href="ijen1.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/gland-sunset.jpg" alt="G Land" class="card-img">
+                <div class="card-content">
+                    <h3>G Land</h3>
+                    <p>gulungan ombak yang panjang, tinggi, cepat, dan membentuk tabung ombak (barrel) yang hampir sempurna. </p>
+                    <a href="g-land.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/raung.jpg" alt="Gunung Raung" class="card-img">
+                <div class="card-content">
+                    <h3>Gunung Raung</h3>
+                    <p>Gunung berapi aktif tertinggi di Banyuwangi dengan pemandangan spektakuler dari puncaknya.</p>
+                    <a href="raung.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/purwo.jpg" alt="Alas Purwo" class="card-img">
+                <div class="card-content">
+                    <h3>Alas Purwo</h3>
+                    <p>Taman nasional dengan hutan tropis yang masih alami dan berbagai satwa liar endemik.</p>
+                    <a href="Alas-Purwo.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri -->
+    <section id="galeri">
+        <h2 class="section-title">Galeri Wisata</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/img/telukBiru.jpeg" alt="Teluk Biru">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/gland-sunset.jpg" alt="G Land">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/raung.jpg" alt="Gunung Raung">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/alasP.jpg" alt="Alas Purwo">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/lider.jpg" alt="Air Terjun Lider">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/green-island.jpg" alt="Green island">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/ranti.jpg" alt="Gunung Ranti">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/jatipapak.jpeg" alt="Hutan Mangrove Jatipapak">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/parang-ireng.jpeg" alt="Pantai Parang Ireng">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/japuro.jpeg" alt="japuro">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/kalisawah.jpeg" alt="Perkemahan Kalisawah">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img/baluran.jpeg" alt="Alas Baluran">
+            </div>
+        </div>
+        <br>
+        <div class="card-content">
+                    <h3>Cek Info Lengkap Tentang Destinasi Wisata Kami Disini</h3>
+                    <p></p>
+                    <a href="destinasi.html" class="btn">Cek Disini</a>
+                </div>
+    </section>
+
+    <!-- Banyuwangi Ethno Carnival (BEC) -->
+    <section class="bec-section" id="bec">
+        <h2 class="section-title">Banyuwangi Ethno Carnival</h2>
+        <div class="bec-content">
+            <div class="bec-text">
+                <h3>Pesta Budaya yang Memukau Dunia</h3>
+                <p>Banyuwangi Ethno Carnival (BEC) adalah festival budaya tahunan yang menjadi ikon pariwisata Banyuwangi. Acara ini pertama kali diselenggarakan pada tahun 2011 dan telah berkembang menjadi salah satu event budaya terbesar di Indonesia yang menarik perhatian wisatawan mancanegara.</p>
+                <p>BEC menggabungkan unsur-unsur budaya lokal Banyuwangi dengan sentuhan modern dan kontemporer. Para peserta carnival mengenakan kostum-kostum spektakuler yang terinspirasi dari kekayaan budaya Osing, tradisi Jawa, pengaruh Bali, serta keindahan alam Banyuwangi. Setiap kostum dirancang dengan detail yang luar biasa dan menceritakan kisah-kisah lokal yang kaya makna.</p>
+                <p>Festival ini tidak hanya menjadi ajang pameran budaya, tetapi juga sarana pelestarian warisan budaya lokal. BEC telah berhasil menempatkan Banyuwangi di peta pariwisata internasional dan menjadi contoh sukses bagaimana budaya lokal dapat dikemas menjadi produk pariwisata yang menarik dan berkelas dunia.</p>
+            </div>
+            <div class="bec-image">
+                <img src="assets/img/BEC.jpg" alt="Banyuwangi Ethno Carnival">
+            </div>
+        </div>
+    </section>
+
+    <!-- Budaya -->
+    <section id="budaya">
+        <h2 class="section-title">Budaya Banyuwangi</h2>
+        <div class="culture-info">
+            <div class="culture-card">
+                <h3>Gandrung</h3>
+                <p>Tarian tradisional Banyuwangi yang melambangkan rasa syukur dan cinta. Biasanya ditampilkan dalam acara-acara adat dan festival.</p>
+            </div>
+            <div class="culture-card">
+                <h3>Barong Osing</h3>
+                <p>Seni pertunjukan khas suku Osing yang menggambarkan pertarungan antara kebaikan dan kejahatan dalam bentuk tarian maskot.</p>
+            </div>
+            <div class="culture-card">
+                <h3>Festival Banyuwangi</h3>
+                <p>Rangkaian festival tahunan yang menampilkan kekayaan budaya, kuliner, dan pariwisata Banyuwangi kepada dunia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi -->
+    <section id="informasi">
+        <h2 class="section-title">Informasi Wisata</h2>
+        <div class="culture-info">
+            <div class="info-card">
+                <h3>Akomodasi</h3>
+                <p>Banyuwangi menyediakan berbagai pilihan akomodasi mulai dari hotel bintang lima hingga homestay yang nyaman dan terjangkau.</p>
+            </div>
+            <div class="info-card">
+                <h3>Transportasi</h3>
+                <p>Mudah dijangkau melalui jalur darat, laut, dan udara. Bandara Banyuwangi melayani penerbangan domestik dari berbagai kota besar.</p>
+            </div>
+            <div class="info-card">
+                <h3>Cuaca Terbaik</h3>
+                <p>Waktu terbaik mengunjungi Banyuwangi adalah pada musim kemarau (April-Oktober) untuk aktivitas outdoor dan hiking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="testimonials" id="testimoni">
+        <h2 class="section-title">Testimoni Pengunjung</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Pengalaman tak terlupakan melihat blue fire di Kawah Ijen. Pemandangan alamnya luar biasa indah!"</p>
+                <div class="testimonial-author">- Ahmad Rizki</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Budaya dan keramahan masyarakat Banyuwangi membuat saya ingin kembali lagi. Sangat direkomendasikan!"</p>
+                <div class="testimonial-author">- Siti Nurhaliza</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Dari pantai hingga gunung, Banyuwangi memiliki segalanya. Tempat yang sempurna untuk liburan keluarga."</p>
+                <div class="testimonial-author">- Budi Santoso</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tombol naik -->
+    <button id="scrollTopBtn" class="scroll-top-btn hidden floating">
+        <div class="progress-container">
+            <svg class="progress-ring" height="50" width="50">
+                <circle class="progress-ring-circle" r="20" cx="25" cy="25" stroke-dasharray="125.66 125.66" stroke-dashoffset="125.66"></circle>
+            </svg>
+            <span class="arrow">^</span>
+        </div>
+    </button>
+
+    <!-- BUTTON -->
+<div id="chatbot-btn">💬</div>
+
+<!-- CHAT WINDOW -->
+<div id="chat-window">
+    <div id="chat-header">🤖bot tour guide</div>
+    <div id="chat-messages"></div>
+    <div id="typing-indicator" style="display:none;"></div>
+
+    <div id="chat-input-area">
+        <input id="chat-input" type="text" placeholder="Tanyakan wisata / kuliner..." />
+        <button id="send-btn">Kirim</button>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pesona Banyuwangi</h3>
+                <p>Portal informasi pariwisata resmi Kabupaten Banyuwangi yang mempromosikan keindahan alam dan budaya lokal.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📞 +62 812-1774-5524 </p>
+                <p>📞 +62 877-6519-7020 </p>
+                <p>✉️ info@pesonabanyuwangi.id</p>
+                <p>📍  SMK Negeri 1 Banyuwangi</p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Transportasi - Pesona Banyuwangi. </p>
+            <p>Created by Group 3 | All right reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi untuk smooth scrolling saat tautan navigasi diklik
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Scroll ke elemen target dengan smooth scrolling
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // Offset untuk menghindari navbar
+                        behavior: 'smooth'
+                    });
+                    
+                    // Tutup sidebar setelah klik
+                    closeSidebar();
+                }
+            });
+        });
+
+        // Fungsi untuk membuka sidebar
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeSidebar');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll saat sidebar terbuka
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // Kembalikan scroll
+        }
+        
+        hamburger.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // Efek fade-in saat scroll (animasi sederhana)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Terapkan observer ke elemen-elemen yang ingin dianimasikan
+        document.querySelectorAll('.destination-card, .gallery-item, .culture-card, .info-card, .testimonial-card, .content-with-image, .bec-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // scroll button
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const progressCircle = document.querySelector('.progress-ring-circle');
+            const radius = progressCircle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+
+            progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressCircle.style.strokeDashoffset = circumference;
+
+            function setProgress(percent) {
+                const offset = circumference - (percent / 100) * circumference;
+                progressCircle.style.strokeDashoffset = offset;
+            }
+
+            function toggleScrollButton() {
+                const scrollPercent = (document.documentElement.scrollTop || document.body.scrollTop) / 
+                                    ((document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight) * 100;
+                
+                setProgress(scrollPercent);
+
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.remove('hidden');
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                    scrollTopBtn.classList.add('hidden');
+                }
+            }
+
+            function smoothScrollToTop() {
+                const scrollStep = -window.scrollY / (500 / 16);
+                const scrollInterval = setInterval(() => {
+                    if (window.scrollY !== 0) {
+                        window.scrollBy(0, scrollStep);
+                    } else {
+                        clearInterval(scrollInterval);
+                    }
+                }, 16);
+            }
+
+            window.addEventListener('scroll', toggleScrollButton);
+            
+            scrollTopBtn.addEventListener('click', () => {
+                smoothScrollToTop();
+            });
+
+            toggleScrollButton();
+        });
+
+        // Chatbot
+    function showTypingBot() {
+    const typing = document.getElementById("typing-indicator");
+    typing.innerHTML = `
+        <div class="typing">
+            <span></span><span></span><span></span>
+        </div>
+    `;
+    typing.style.display = "block";
+}
+
+function hideTypingBot() {
+    const typing = document.getElementById("typing-indicator");
+    typing.style.display = "none";
+    typing.innerHTML = "";
+}
+
+
+// ===== DATA WISATA & KULINER =====
+const info = {
+    "kawah ijen": {
+        text: "Kawah Ijen dikenal dengan fenomena blue fire yang langka, danau asam raksasa, serta sunrise dramatis di puncak kaldera.",
+        img: "assets/img/kawah-ijen.jpg"
+    },
+    "pulau merah": {
+        text: "Pulau Merah terkenal dengan pulau kecilnya di depan pantai, sunset memukau, dan ombak selancar stabil. Pulau Merah memiliki panorama sunset terbaik dan ombak ideal untuk surfing pemula. Pulau Merah memiliki Daya tarik utama yakni Bukit di tengah laut, Terdapat sebuah bukit kecil di tepi pantai dengan tanah berwarna merah, yang menjadi asal nama 'Pulau Merah' meskipun permukaannya ditutupi vegetasi hijau. Bukit ini bisa dicapai dengan berjalan kaki saat air surut",
+        img: "assets/img/pulmerah.jpeg"
+    },
+    "djawatan": {
+        text: "Djawatan Benculuk seperti hutan fantasi penuh pohon trembesi raksasa, suasananya sangat fotogenik. Kawasan ini terkenal dengan pemandangan hutan yang unik dan eksotis, sering disamakan dengan Hutan Fangorn dalam film Lord of The Rings. Dulunya, kawasan Djawatan merupakan area milik Perhutani yang berfungsi sebagai tempat penimbunan kayu (TPK), terutama kayu jati, pada masa pemerintahan kolonial Belanda. Seiring berjalannya waktu, area ini bertransformasi menjadi destinasi wisata alam dan resmi dibuka untuk umum pada Juni 2018. ",
+        img: "assets/img/Djawatan.jpeg",
+    },
+    "air terjun lider": {
+        text: "Air Terjun Lider menjulang tinggi dengan debit kuat, suasananya sejuk dan membutuhkan trekking ringan yang terletak di lereng Gunung Raung. Tempat ini menawarkan panorama alam yang memukau dan suasana yang sejuk, cocok bagi pecinta wisata alam dan petualangan. Air terjun ini memiliki ketinggian sekitar 60 meter (beberapa sumber menyebut 70 atau 80 meter) dengan aliran air yang deras dan jernih, dikelilingi oleh hutan yang masih sangat alami.",
+        img: "assets/img/lider1.jpeg",
+        
+    },
+    "parang ireng": {
+        text: "Pantai ini dikenal karena keunikannya, mulai dari pasir yanng berukran cukup besar seperti peluru gotri hingga formasi batuan andesit hitam yang tersebar di sepanjang pantai, yang menjadi asal usul namanya ('ireng' dalam bahasa Jawa berarti hitam). Kawasan ini juga memiliki potensi keanekaragaman hayati yang menarik untuk diamati, terutama kehidupan laut dangkal dan lumut yang menempel di karang. ",
+        img: "assets/img/parang-ireng.jpeg",
+        
+    },
+    "alas purwo": {
+        text: "Taman Nasional Alas Purwo di Banyuwangi adalah kawasan konservasi alam yang kaya akan keanekaragaman hayati dan juga kental dengan kisah mistis dan spiritual, yang diyakini sebagai hutan pertama yang muncul di Pulau Jawa. Hutan ini memiliki berbagai daya tarik. Taman Nasional ini mencakup ekosistem hutan hujan tropis, hutan bakau (mangrove) terluas di Jawa di kawasan Bedul, savana Sadengan, dan pantai. Pengunjung dapat menikmati pemandangan alam yang masih asri dan sejuk. Alas Purwo menjadi rumah bagi beragam satwa liar, termasuk banteng Jawa, rusa, merak, penyu hijau, dan ratusan spesies burung, menjadikannya lokasi yang bagus untuk pengamatan satwa (birdwatching).",
+        img: "assets/img/purwo.jpg",
+        
+    },
+    "G-Land": {
+        text: "Terkenal di dunia sebagai salah satu spot selancar terbaik (world-class surfing spot) dengan ombak besar yang panjang dan melengkung sempurna, ideal bagi peselancar profesional. Tempat ini terkenal di kalangan peselancar internasional karena memiliki salah satu ombak kiri (left-hand wave) terbaik dan paling menantang di dunia, seringkali disebut sebagai yang terbaik kedua setelah Hawaii. Karena kualitas ombaknya, G-Land sering menjadi tuan rumah acara selancar kelas dunia, seperti World Surf League (WSL) Championship Tour. ",
+        img: "assets/img/gland-sunset.jpg",
+        
+    },
+    "Teluk Ijo": {
+        text: "Teluk Hijau (dikenal juga sebagai Green Bay) adalah destinasi wisata pantai tersembunyi yang indah di Kabupaten Banyuwangi, Jawa Timur. Terletak di dalam kawasan Taman Nasional Meru Betiri, pantai ini terkenal karena kealamiannya dan warna air lautnya yang unik, cenderung hijau toska, yang berasal dari alga di dasar perairan. ",
+        img: "assets/img/telukIjo.jpg",
+        
+    },
+    "Raung":{
+        text: "Gunung berapi aktif yang terletak di perbatasan tiga kabupaten di Jawa Timur (Banyuwangi, Bondowoso, dan Jember). Gunung ini terkenal sebagai salah satu tujuan pendakian paling menantang dan ekstrem di Pulau Jawa, dengan ketinggian Puncak Sejati mencapai 3.344 meter di atas permukaan laut (mdpl). ",
+        img: "assets/img/raung.jpg",
+        
+    },
+    "Teluk Biru":{
+        text: "Destinasi wisata pantai tersembunyi yang indah, terkenal dengan keindahan bawah lautnya, dan terletak di dalam kawasan Taman Nasional Alas Purwo, Banyuwangi, Jawa Timur. Sesuai namanya, teluk ini menawarkan pemandangan air laut yang jernih dengan gradasi warna biru yang menakjubkan, menjadikannya spot foto yang indah. Teluk Biru merupakan surga bagi pecinta aktivitas bahari. Keindahan terumbu karang dan biota laut yang beragam menjadikannya lokasi yang ideal untuk snorkeling dan diving. ",
+        img: "assets/img/telukBiru.jpeg",
+        
+    },
+    "Ranti":{
+        text: "Gunung di Provinsi Jawa Timur dan merupakan salah satu puncak di kawasan Pegunungan Ijen, yang berlokasi di perbatasan Kabupaten Bondowoso dan Kabupaten Banyuwangi dengan ketinggian puncak mencapai sekitar 2.601 meter di atas permukaan laut (Mdpl). Gunung Ranti menawarkan pengalaman pendakian yang menantang namun menarik, terutama bagi pendaki pemula. Bagi pendaki yang berencana mengunjungi Gunung Ranti, disarankan untuk mempersiapkan logistik yang cukup karena tidak ada warung di sepanjang jalur pendakian, dan suhu udara bisa sangat dingin, terutama pada malam hari. ",
+        img: "assets/img/ranti.jpg",
+        
+    },
+    "Ngagelan":{
+        text: "Pantai Ngagelan di Banyuwangi adalah destinasi wisata alam yang terletak di dalam kawasan Taman Nasional Alas Purwo, terkenal sebagai pusat konservasi penyu langka. Tempat ini menawarkan pengalaman unik untuk belajar tentang penyu dan menikmati keindahan pantai yang tenang dan alami. Daya tarik utama pantai ini adalah adanya pusat penangkaran penyu. Pengunjung dapat memperoleh edukasi tentang biodiversitas penyu dari para ahli dan, jika beruntung, berkesempatan untuk ikut serta dalam kegiatan melepas tukik (anak penyu) ke laut. Empat jenis penyu langka yang sering ditemukan bertelur di sini antara lain penyu hijau, penyu sisik, penyu abu-abu, dan penyu belimbing.",
+        img: "assets/img/pantai-ngagelan.jpeg",
+        
+    },
+    "Tabuhan":{
+        text: "Pulau Tabuhan adalah sebuah pulau kecil tak berpenghuni yang terletak di Selat Bali, Banyuwangi, Jawa Timur, terkenal dengan pasir putih bersih, air laut biru jernih, dan pemandangan alam yang indah. Pulau ini merupakan destinasi wisata bahari yang populer, menawarkan beragam aktivitas seru bagi pengunjung. Pulau ini menyuguhkan pemandangan pantai berpasir putih alami dengan air laut yang jernih bergradasi biru, serta pemandangan Gunung Ijen di kejauhan. ",
+        img: "assets/img/tabuhan.jpeg",
+        
+    },
+    "Bangsring Underwater":{
+        text: "Bangsring Underwater (juga dikenal sebagai Bunder) adalah destinasi ekowisata bahari populer di Banyuwangi yang terkenal dengan keindahan bawah lautnya, inisiatif konservasi terumbu karang, dan kesempatan unik untuk berenang bersama hiu. Daya tarik utama adalah panorama bawah laut yang kaya akan terumbu karang berwarna-warni dan beragam spesies ikan hias. Air lautnya yang jernih membuatnya ideal untuk pemula maupun penyelam berpengalaman. Ikon wisata 'Rumah Apung' berfungsi sebagai pusat aktivitas dan konservasi. Pengunjung dapat menyeberang ke rumah apung (sekitar 20 meter dari bibir pantai) dan menikmati keindahan laut dari sana.",
+        img: "assets/img/bangsring.jpeg",
+        
+    },
+    "tirto kemanten": "Air Terjun Tirto Kemanten adalah air terjun kembar yang jatuh berdampingan secara simetris.",
+    "sego tempong": "Sego Tempong memiliki sambal super pedas yang menampar, disajikan dengan sayur dan lauk.",
+    "pecel pitik": "Pecel Pitik adalah ayam kampung berbumbu kelapa sangrai khas Suku Osing.",
+    "rujak soto": "Rujak Soto adalah kuliner unik yang menggabungkan rujak pedas dan kuah soto gurih.",
+    "sego cawuk": "Sego Cawuk menggunakan kuah parutan kelapa fermentasi, rasanya unik dan tradisional.",
+    "botok tawon": "Botok Tawon dibuat dari sarang tawon dimasak dengan rempah khas.",
+    "pecel rawon": "Pecel Rawon adalah gabungan kuah rawon hitam dengan bumbu pecel pedas.",
+    "ayam pedas": "Ayam Pedas Banyuwangi rasanya kuat, pedas, dan kaya rempah.",
+    "telur petis": "Telur Petis dimasak dengan bumbu petis hitam gurih khas Banyuwangi.",
+    "bagiak": "Bagiak adalah kue tradisional khas Banyuwangi yang terbuat dari tepung beras dan gula, kadang diberi tambahan kelapa parut. Rasanya manis, renyah, dan gurih, cocok sebagai camilan ringan atau oleh-oleh. Teksturnya kering tapi renyah, sehingga mudah dinikmati kapan saja.",
+    "bukit malangsari":"Bukit Malangsari Kalibaru adalah destinasi wisata alam di Banyuwangi yang terkenal dengan pemandangan hijau perbukitan dan sawah bertingkat. Udara sejuknya membuat tempat ini cocok untuk foto-foto, piknik, atau menikmati sunrise dan sunset. Dari puncaknya, pengunjung bisa melihat panorama alam yang luas dan menenangkan.",
+    "mangrove jatipapak":"Mangrove Jatipapak adalah kawasan wisata alam di Banyuwangi yang menyajikan hutan bakau (mangrove) yang asri di tepi pantai. Tempat ini cocok untuk berjalan di jembatan kayu, menikmati udara laut yang segar, dan mengamati ekosistem mangrove yang kaya akan burung dan biota laut. Selain menjadi lokasi edukasi tentang pentingnya mangrove, pengunjung juga bisa foto-foto dengan latar hijau dan laut yang menenangkan.",
+    "air terjun ketegan":"Air Terjun Ketegan adalah salah satu wisata alam di Banyuwangi yang terkenal dengan air terjun yang jernih dan deras, dikelilingi pepohonan hijau yang rimbun. Tempat ini cocok untuk rekreasi keluarga, trekking ringan, dan foto-foto. Suasana sejuk dan alami membuat pengunjung bisa bersantai sambil menikmati suara gemericik air yang menenangkan.",
+    "pantai mustika pancer":"Pantai Mustika Pancer adalah pantai indah di Banyuwangi yang terkenal dengan pasir putih dan ombak tenang. Pantai ini cocok untuk berenang, bersantai, atau piknik keluarga. Di sekitar pantai, pengunjung bisa menikmati pemandangan laut luas, suasana sejuk, dan kegiatan memancing atau berjalan di tepi pantai sambil menikmati senja.",
+    "pulau mbedil":"Pulau Mbedil adalah pulau kecil di perairan Banyuwangi yang terkenal dengan pantai berpasir putih dan air laut jernih. Pulau ini cocok untuk snorkeling, berenang, atau sekadar bersantai menikmati pemandangan laut. Suasana tenang dan alami membuat Pulau Mbedil ideal bagi pengunjung yang ingin menikmati keindahan alam tanpa keramaian.",
+    "green island": {
+        text: "Green Island di Banyuwangi adalah destinasi wisata pulau yang terkenal dengan air laut jernih berwarna hijau kebiruan dan suasana alam yang asri. Pulau ini cocok untuk snorkeling, berenang, atau menikmati panorama laut yang menenangkan. Keindahan terumbu karang dan ekosistem laut di sekitar Green Island membuatnya populer bagi pengunjung yang menyukai wisata bahari.",
+        img: "assets/green-island-banyuwangi-1757665182554_43.jpeg"
+    },
+    "perkemahan kalisawah":"Perkemahan Kalisawah adalah area wisata alam di Banyuwangi yang cocok untuk camping dan kegiatan alam terbuka. Terletak di area perbukitan dan hutan, tempat ini menawarkan udara sejuk, pemandangan hijau, dan suasana tenang. Pengunjung bisa menikmati api unggun, trekking ringan, dan mengamati alam sambil menghabiskan waktu bersama teman atau keluarga.",
+    "waduk sidodadi":"Waduk Sidodadi adalah destinasi wisata air di Banyuwangi yang menawarkan pemandangan waduk yang tenang dengan latar perbukitan hijau. Tempat ini cocok untuk memancing, piknik, atau sekadar bersantai menikmati alam. Udara sejuk dan suasana damai membuat pengunjung bisa melepas penat sambil menikmati panorama air dan pepohonan sekitar.",
+    "desa wisata osing":"Desa Wisata Osing adalah destinasi budaya di Banyuwangi yang memperkenalkan adat, kesenian, dan kuliner khas suku Osing. Pengunjung bisa menyaksikan pertunjukan tari tradisional, belajar kerajinan tangan, dan mencicipi makanan lokal. Selain itu, suasana desa yang asri dan tradisional memberikan pengalaman edukatif dan budaya yang autentik bagi wisatawan.",
+    "japuro":"Japuro adalah destinasi wisata di Banyuwangi yang dikenal dengan pemandangan alam yang asri dan tenang. Tempat ini cocok untuk bersantai, berfoto, atau trekking ringan. Lingkungan sekitarnya yang hijau dan udara sejuk membuat pengunjung bisa menikmati suasana pedesaan sambil menikmati panorama alam yang menenangkan.",
+    "sendang seruni":"Sendang Seruni adalah wisata alam di Banyuwangi berupa mata air atau kolam alami yang dikelilingi pepohonan hijau. Tempat ini cocok untuk bersantai, berendam, atau piknik keluarga. Suasana sejuk dan alami membuat pengunjung bisa menikmati ketenangan air yang jernih sambil menikmati pemandangan sekitar.",
+    "Ayam Kesrut":"Ayam Kesrut adalah salah satu kuliner khas Banyuwangi. Hidangan ini berupa ayam yang digoreng atau dibakar dengan bumbu khas, biasanya disajikan dengan sambal pedas dan nasi hangat. Rasanya gurih, pedas, dan aromanya khas, membuat Ayam Kesrut menjadi favorit bagi wisatawan yang ingin mencoba makanan tradisional Banyuwangi.",
+    "Pindang Koyong":"Pindang Koyong adalah salah satu kuliner tradisional Banyuwangi berupa ikan pindang yang dimasak dengan bumbu khas, biasanya berkuah asam, segar, dan sedikit pedas. Hidangan ini memiliki rasa gurih dan menyegarkan, cocok dinikmati bersama nasi hangat, dan menjadi favorit bagi pengunjung yang ingin mencicipi makanan laut khas daerah Banyuwangi.",
+    "Rajungan Remason":"Rajungan Remason adalah hidangan khas Banyuwangi berupa kepiting rajungan yang dimasak dengan bumbu rempah khas daerah setempat. Rasanya pedas, gurih, dan aromanya kuat, sangat cocok untuk pecinta seafood. Biasanya disajikan dengan nasi hangat, membuat sensasi makan semakin nikmat.",
+    "Sayur Kelor":"Sayur Kelor adalah hidangan tradisional Banyuwangi yang terbuat dari daun kelor segar dimasak dengan bumbu sederhana. Rasanya segar, ringan, dan menyehatkan, cocok untuk disantap bersama nasi hangat. Selain lezat, sayur ini juga dikenal kaya akan nutrisi dan vitamin.",
+    "Sayur Klenthang":"Sayur Klenthang adalah masakan tradisional Banyuwangi yang terdiri dari berbagai sayuran segar yang dimasak dengan bumbu khas daerah. Rasanya gurih, segar, dan ringan, cocok sebagai lauk pendamping nasi. Hidangan ini juga menonjolkan kesederhanaan rasa alami sayuran sehingga tetap sehat dan lezat.",
+    "Petulo":"Petulo adalah jajanan tradisional Banyuwangi yang terbuat dari ketan dan kelapa parut, kadang dicampur gula atau bahan manis lain. Rasanya manis, legit, dan lembut, cocok sebagai camilan sore atau oleh-oleh khas daerah. Teksturnya kenyal dan aromanya khas, membuatnya disukai banyak orang.",
+    "Bolu Kuwuk":"Bolu Kuwuk adalah kue tradisional Banyuwangi dengan tekstur lembut, ringan, dan manis. Biasanya disajikan sebagai teman minum teh atau kopi, atau sebagai camilan untuk acara keluarga. Aromanya yang harum dan rasanya yang manis membuatnya menjadi favorit masyarakat lokal maupun wisatawan.",
+    "Ketan Bubuk Kedelai":"Ketan Bubuk Kedelai adalah jajanan tradisional Banyuwangi yang terbuat dari ketan yang ditaburi bubuk kedelai sangrai. Rasanya manis, gurih, dan legit, dengan tekstur kenyal khas ketan. Hidangan ini sering dijadikan camilan ringan atau oleh-oleh khas daerah, mudah dinikmati kapan saja.",
+    "Ulung-Ulung":"Ulung-Ulung adalah jajanan tradisional Banyuwangi yang terbuat dari kelapa parut dan gula, kadang dicampur dengan tepung atau bahan lokal lainnya. Rasanya manis, legit, dan lembut, cocok sebagai camilan sore atau oleh-oleh khas. Teksturnya yang kenyal dan aromanya yang harum membuatnya disukai banyak orang."
+};
+
+// ===== CHAT FUNCTIONS =====
+const btn = document.getElementById("chatbot-btn");
+const win = document.getElementById("chat-window");
+const msgArea = document.getElementById("chat-messages");
+const input = document.getElementById("chat-input");
+const send = document.getElementById("send-btn");
+
+// Buka & tutup via tombol
+btn.onclick = () => {
+    if (win.style.display === "flex") {
+        win.style.animation = "chatClose 0.3s forwards";
+        setTimeout(() => {
+            win.style.display = "none";
+        }, 300);
+    } else {
+        win.style.display = "flex";
+        win.style.animation = "chatOpen 0.3s forwards";
+    }
+};
+
+// Tutup otomatis ketika klik di luar jendela chat
+document.addEventListener("click", function(e) {
+    const clickedInside = win.contains(e.target);
+    const clickedButton = btn.contains(e.target);
+
+    if (!clickedInside && !clickedButton && win.style.display === "flex") {
+        win.style.animation = "chatClose 0.3s forwards";
+        setTimeout(() => {
+            win.style.display = "none";
+        }, 300);
+    }
+});
+
+// kirim pesan
+send.onclick = sendMsg;
+input.addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMsg();
+});
+
+function sendMsg() {
+    let text = input.value.trim();
+    if (!text) return;
+
+    // Tampilkan pesan user
+    addUserMessage(text);
+
+    // Tampilkan typing bot
+    showTypingBot();
+
+    // Delay sedikit agar natural
+    setTimeout(() => {
+        reply(text);
+    }, 800);
+
+    input.value = "";
+}
+
+
+function addUserMessage(text) {
+    msgArea.innerHTML += `<div class="user-msg">${text}</div>`;
+    msgArea.scrollTop = msgArea.scrollHeight;
+}
+
+function addBotMessage(text, img = null) {
+    let html = `<div class="bot-msg">${text}`;
+    if (img) {
+        html += `<br><img src="${img}" style="width:100%; margin-top:8px; border-radius:10px;">`;
+    }
+    html += `</div>`;
+    msgArea.innerHTML += html;
+    msgArea.scrollTop = msgArea.scrollHeight;
+}
+
+// ==== LOGIC JAWABAN ====
+function reply(userInput) {
+    const key = userInput.toLowerCase();
+    let exact = null;
+    let partial = null;
+
+    for (let k in info) {
+        // cocok 100% (frase utuh)
+        if (key.includes(k)) {
+            exact = info[k];
+            break;
+        }
+        // cocok sebagian (fallback)
+        if (!partial && key.split(" ").some(w => k.includes(w))) {
+            partial = info[k];
+        }
+    }
+
+    hideTypingBot();
+
+    if (exact) {
+    if (typeof exact === "object") {
+        return addBotMessage(exact.text, exact.img);
+    } else {
+        return addBotMessage(exact);
+    }
+}
+    if (partial) {
+    if (typeof partial === "object") {
+        return addBotMessage(partial.text, partial.img);
+    } else {
+        return addBotMessage(partial);
+    }
+}
+
+
+    addBotMessage("Saya belum menemukan informasinya. Coba ketik nama wisata atau makanan khas Banyuwangi 😊");
+}
+
+    </script>
+</body>
+</html>

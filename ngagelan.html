@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #003366;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #003366;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #0055aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Detail Destinasi Wisata</div>
+
+    <div class="container">
+
+        <!-- FOTO UTAMA -->
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="assets/img/pantai-ngagelan.jpeg" alt="" style="display: block;">
+            </div>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="container">
+        <div class="detail-header">
+            <h1>Pantai Ngagelan</h1>
+            <p> Pantai yang difungsikan sebagai tempat penangkaran dan pelepasan tukik (anak penyu), serta pemandangan matahari terbenamnya yang indah. </p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galeri Foto</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan1.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan2.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan3.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan4.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan5.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/ngagelan6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>
+                     Pantai Ngagelan adalah sebuah pantai yang terletak di dalam kawasan Taman Nasional Alas Purwo, Banyuwangi, Jawa Timur. Daya tarik utamanya adalah sebagai tempat penangkaran dan pelepasan tukik (anak penyu), serta pemandangan matahari terbenamnya yang indah. 
+                </p>
+                
+                <h3>Keunikan Pantai Ngagelan</h3>
+                <ul>
+                    <li><strong>Konservasi Penyu (Tukik):</strong> Pantai Ngagelan menjadi salah satu titik pendaratan favorit bagi beberapa jenis penyu (seperti Penyu Hijau, Penyu Sisik, Penyu Lekang, dan Penyu Belimbing) untuk bertelur. Pengunjung memiliki kesempatan unik untuk melihat proses penetasan telur dan bahkan berpartisipasi dalam kegiatan pelepasan ratusan anak penyu (tukik) kembali ke habitat aslinya di Samudra Hindia.</li>
+                    <li><strong>Lokasi di Dalam Hutan Lindung:</strong> Akses menuju pantai ini tidak mudah; pengunjung harus melewati jalan tanah dan hutan lebat di dalam Taman Nasional Alas Purwo. Hal ini memberikan pengalaman petualangan tersendiri dan menjaga kealamian serta ketenangan pantai dari hiruk pikuk keramaian kota. Suasananya sangat eksotis, tersembunyi, dan damai.</li>
+                    <li><strong>Pemandangan Matahari TErbenam yang Eksotis:</strong> Menghadap langsung ke Samudra Hindia, pantai ini menawarkan pemandangan matahari terbenam (senja) yang luar biasa indah dengan latar belakang pantai yang bersih dan alami.</li>
+                    <li><strong>Ombak Samudra Selatan:</strong> Memiliki karakteristik pantai selatan Jawa dengan ombak besar khas Samudra Hindia, namun di area penangkaran, ombaknya lebih tenang dan memungkinkan aktivitas pelepasan tukik dengan aman.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li> Mengamati Penangkaran Penyu dan Melepas Tukik ke Laut</li>
+                    <li> Edukasi Tentang Lingkungan dan Alam</li>
+                    <li> Menikmati Pemandangan Matahari Terbenam yang Eksotis</li>
+                    <li> Bersantai dan Menikmati Suasana Alam yang Tenang</li>
+                    <li> Menjelajah Keindahan Alam Taman Nasional Alas Purwo</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Kawasan Taman Nasional Alas Purwo, di Gladak Kembar, Purwoagung, Kecamatan Tegaldlimo, Kabupaten Banyuwangi.</li>
+                    <li><strong>Biaya Masuk:</strong> Sekitar Rp10.000–Rp15.000 per orang</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Puncak pendaratan penyu biasanya terjadi antara April hingga Juni, umumnya pada malam hari dan pelepasan tukik yang seringkali tersedia antara Mei hingga September, biasanya dilakukan pada sore hari menjelang matahari terbenam.</li>
+                    <li><strong>Transportasi:</strong>  Penggunaan kendaraan pribadi (motor atau mobil) disarankan, dan pastikan kondisi kendaraan Anda prima.</li>
+                    <li><strong>Akomodasi:</strong> Anda dapat menemukan homestay atau penginapan sederhana di desa-desa sekitar pintu masuk taman nasional, atau kembali menginap di area Kota Banyuwangi yang menawarkan pilihan akomodasi lebih lengkap.</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li> Mengikuti Petunjuk Petugas</li>
+                    <li> Dilarang Menyentuh Penyu/Tukik Tanpa Izin</li>
+                    <li> Dilarang Menggunakan Cahaya Berlebihan saat Malam Hari</li>
+                    <li> Dilarang Berenang Terlalu Jauh</li>
+                    <li> Dilarang Membawa Hewan Peliharaan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI -->
+        <a href="destinasi.html" class="back-btn">
+            ← Kembali ke Daftar Destinasi
+        </a>
+
+    </div>
+
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+    </script>
+</body>
+</html>

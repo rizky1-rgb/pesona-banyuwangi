@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi Wisata - Alas Purwo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .home-icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .home-icon:hover {
+            background-color: #1b263b;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-header h1 {
+            color: #0d1b2a;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-media {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0d1b2a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-media:hover {
+            background-color: #1b263b;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            color: #0d1b2a;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0d1b2a;
+            padding-bottom: 10px;
+        }
+        
+        .info-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-content h3 {
+            color: #0d1b2a;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            background-color: #0d1b2a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .btn-back:hover {
+            background-color: #1b263b;
+        }
+        
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #0d1b2a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0d1b2a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+            
+            .media-container {
+                max-width: 100%;
+            }
+            
+            .nav-buttons {
+                gap: 10px;
+            }
+            
+            .home-icon, .menu-icon {
+                font-size: 1.2rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Detail Destinasi Wisata</h1>
+        <div class="nav-buttons">
+            <a href="destinasi.html" class="home-icon" title="Kembali ke Beranda">🏠</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="detail-header">
+            <h1>Alas Purwo</h1>
+            <p>Taman Nasional di ujung timur Jawa dengan savana, pantai, dan hutan yang masih alami.</p>
+        </div>
+        
+        <div class="media-section">
+            <div class="media-container">
+                <!-- Gambar default -->
+                <img id="mediaImage" src="https://placehold.co/800x500?text=Alas+Purwo+Savana" alt="Alas Purwo" style="display: block;">
+                <!-- Video (default hidden) -->
+                <video id="mediaVideo" controls autoplay muted loop style="display: none; width: 100%; height: auto;">
+                    <source src="assets/img/lv_0_20251208152509.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen video.
+                </video>
+            </div>
+            <div class="media-buttons">
+                <button class="btn-media" onclick="switchToVideo()">Ganti ke Video</button>
+                <button class="btn-media" onclick="switchToImage()">Ganti ke Gambar</button>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="info-title">Informasi Detail</h2>
+            <div class="info-content">
+                <p>Alas Purwo adalah taman nasional yang terletak di ujung timur Pulau Jawa, tepatnya di Kabupaten Banyuwangi, Jawa Timur. Taman ini memiliki luas sekitar 43.750 hektar dan merupakan salah satu kawasan konservasi alam yang penting di Indonesia.</p>
+                
+                <h3>Keunikan Alas Purwo</h3>
+                <ul>
+                    <li><strong>Savana yang luas:</strong> Menyajikan pemandangan savana yang menyerupai padang rumput Afrika, menjadi habitat bagi berbagai satwa liar.</li>
+                    <li><strong>Pantai-pantai eksotis:</strong> Memiliki beberapa pantai indah seperti Pantai Grajagan, Pantai Merah, dan Pantai Teluk Hijau.</li>
+                    <li><strong>Hutan primer:</strong> Menyimpan keanekaragaman hayati yang tinggi dengan flora dan fauna yang masih asli.</li>
+                    <li><strong>Spot foto Instagramable:</strong> Berbagai spot fotografi dengan latar belakang alam yang spektakuler.</li>
+                </ul>
+                
+                <h3>Aktivitas yang Bisa Dilakukan</h3>
+                <ul>
+                    <li>Menikmati sunrise dari bukit-bukit savana</li>
+                    <li>Snorkeling dan diving di pantai-pantai berpasir putih</li>
+                    <li>Mengamati satwa liar seperti rusa, banteng, dan burung-burung langka</li>
+                    <li>Tracking di hutan primer untuk menikmati keindahan alam</li>
+                    <li>Photography dengan latar belakang alam yang dramatis</li>
+                </ul>
+                
+                <h3>Info Praktis</h3>
+                <ul>
+                    <li><strong>Lokasi:</strong> Ujung timur Pulau Jawa, Kabupaten Banyuwangi, Jawa Timur</li>
+                    <li><strong>Biaya Masuk:</strong> Rp 20.000 per orang (untuk wisatawan domestik)</li>
+                    <li><strong>Waktu Terbaik Berkunjung:</strong> Bulan April hingga Oktober (musim kemarau)</li>
+                    <li><strong>Transportasi:</strong> Dapat dijangkau dengan mobil atau motor dari kota Banyuwangi (sekitar 2-3 jam perjalanan)</li>
+                    <li><strong>Akomodasi:</strong> Tersedia penginapan sederhana di dalam kawasan taman nasional</li>
+                </ul>
+                
+                <h3>Peraturan Kunjungan</h3>
+                <ul>
+                    <li>Dilarang merusak lingkungan dan membuang sampah sembarangan</li>
+                    <li>Dilarang memberi makan satwa liar</li>
+                    <li>Harap tetap di jalur yang ditentukan saat tracking</li>
+                    <li>Bawa perlengkapan cukup (air minum, obat-obatan, pakaian hangat)</li>
+                    <li>Disarankan membawa guide lokal untuk pengalaman lebih baik</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="destinasi.html" class="btn-back">Kembali ke Daftar Destinasi</a>
+    </div>
+    
+    <button class="chat-button">💬</button>
+    <button class="scroll-to-top">↑</button>
+    
+    <script>
+        // Fungsi untuk mengganti media ke video
+        function switchToVideo() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play(); // Mulai putar video
+        }
+        
+        // Fungsi untuk mengganti media ke gambar
+        function switchToImage() {
+            const image = document.getElementById('mediaImage');
+            const video = document.getElementById('mediaVideo');
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause(); // Jeda video
+        }
+        
+        // Tambahkan fungsi scroll to top
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Fungsi untuk navigasi kembali ke halaman utama
+        document.querySelector('.btn-back').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'destinasi.html';
+        });
+    </script>
+</body>
+</html>
+
