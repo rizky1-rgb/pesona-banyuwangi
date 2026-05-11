@@ -25,12 +25,93 @@
 
         /* Skema warna */
         :root {
-            --biru-langit: #87CEEB;
+            --biru-langt: #87CEEB;
             --biru-laut: #1E90FF;
             --biru-tua: #003366;
             --hijau-daun: #2E8B57;
             --putih: #ffffff;
             --abu-muda: #f8f9fa;
+        }
+
+        /* Halaman Pembuka dengan Video */
+        #intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--putih);
+            z-index: 3000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            overflow: hidden;
+        }
+        #intro-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.6);
+            z-index: 0;
+        }
+        #intro-screen h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            z-index: 2;
+            transform: translateY(-80px);
+        }
+        #intro-screen p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 4.5rem;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            z-index: 2;
+            transform: translateY(-80px);
+        }
+        #start-btn {
+            background: var(--biru-laut);
+            color: var(--putih);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 2;
+            transform: translateY(40px);
+        }
+        #start-btn:hover {
+            background: var(--biru-tua);
+            transform: translateY(35px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Main Content Hidden Initially */
+        #main-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #main-content.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Header/Navbar */
@@ -353,6 +434,21 @@
         .card-content p {
             color: #666;
             margin-bottom: 1rem;
+        }
+
+        /* Saran Penyajian */
+        .saran-penyajian {
+            background-color: rgba(34, 139, 34, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--hijau-daun);
+        }
+
+        .saran-penyajian h4 {
+            color: var(--hijau-daun);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .btn {
@@ -854,6 +950,17 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     </style>
 </head>
 <body>
+    <!-- Halaman Pembuka dengan Video -->
+    <div id="intro-screen">
+        <video id="intro-video" autoplay muted playsinline loop>
+            <source src="assets/vid/teaser.mp4" type="video/mp4">
+            <img src="https://placehold.co/1200x800/1E90FF/FFFFFF?text=Gunung+Ijen+Banyuwangi" alt="Fallback background">
+        </video>
+        <div class="video-overlay"></div>
+        <h1>Pesona Banyuwangi</h1>
+        <p>Temukan keindahan alam dan budaya yang memukau di ujung timur Pulau Jawa</p>
+        <button id="start-btn">Mulai Jelajah</button>
+    </div>
     <!-- Header/Navbar dengan hamburger menu -->
     <header>
         <nav class="navbar">
@@ -880,8 +987,8 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     <!-- Hero Section -->
     <section class="hero" id="beranda">
         <div class="hero-content">
-            <h1>Pesona Banyuwangi</h1>
-            <p>Temukan keindahan alam dan budaya yang memukau di ujung timur Pulau Jawa</p>
+            <h1>Jelajah Banyuwangi</h1>
+            <p>Jelajahi serpihan surga tersembunyi di ujung timur Pulau Jawa</p>
         </div>
     </section>
 
@@ -948,14 +1055,6 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
                 </div>
             </div>
             <div class="destination-card">
-                <img src="assets/img/raung.jpg" alt="Gunung Raung" class="card-img">
-                <div class="card-content">
-                    <h3>Gunung Raung</h3>
-                    <p>Gunung berapi aktif tertinggi di Banyuwangi dengan pemandangan spektakuler dari puncaknya.</p>
-                    <a href="raung.html" class="btn">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="destination-card">
                 <img src="assets/img/purwo.jpg" alt="Alas Purwo" class="card-img">
                 <div class="card-content">
                     <h3>Alas Purwo</h3>
@@ -964,56 +1063,157 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
                 </div>
             </div>
         </div>
+
+        <br><br>
+        <h2 class="section-title">Budaya & Kesenian Populer</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="assets/img/gandrung.jpg" alt="Gandrung" class="card-img">
+                <div class="card-content">
+                    <h3>Gandrung</h3>
+                    <p>Kesenian paling ikonik yang merupakan perpaduan tari dan nyanyian, sering diiringi gong dan kenong. Dimainkan oleh perempuan, dan kini menjadi ciri khas dan ikon Banyuwangi.</p>
+                    <a href="gandrung.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/patrol.jpeg" alt="Patrol" class="card-img">
+                <div class="card-content">
+                    <h3>Patrol</h3>
+                    <p>tradisi musik bambu yang dimainkan oleh sekelompok anak muda di bulan Ramadhan untuk membangunkan warga sahur. Tradisi ini juga sering dirayakan dengan Festival Patrol.</p>
+                    <a href="patrol.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/kayun.jpeg" alt="Puter Kayun" class="card-img">
+                <div class="card-content">
+                    <h3>Puter Kayun</h3>
+                    <p>Puter Kayun adalah tradisi tahunan di Boyolangu, Giri, Banyuwangi, yang merupakan ritual napak tilas dan perayaan rasa syukur yang diadakan setiap tanggal 10 Syawal.</p>
+                    <a href="puter-kayun.html" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <h2 class="section-title">Kuliner Populer</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="assets/img/tempong.jpg" alt="Sego Tempong" class="card-img">
+                <div class="card-content">
+                    <h3>Sego Tempong</h3>
+                        <p>Nasi pedas khas Banyuwangi dengan sambal terasi yang menggugah selera.</p>
+                        <div class="saran-penyajian">
+                            <h4>Saran Penyajian</h4>
+                            <p>Sajikan hangat dengan ayam goreng kampung, tempe goreng, dan lalapan segar. Nikmati saat pagi atau siang hari untuk pengalaman autentik.</p>
+                        </div>
+                        <br>
+                        <a href="https://food.grab.com/id/id/restaurant/sego-tempong-cak-har-jl-kh-wahid-hasyim-no-08-gang-koes-plus-delivery/6-C7JFDFK3J33BSA" class="btn">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/rujak-soto.jpg" alt="Rujak Soto" class="card-img">
+                <div class="card-content">
+                    <h3>Rujak Soto</h3>
+                    <p>Perpaduan unik antara rujak buah dan kuah soto yang gurih dan segar.</p>
+                    <div class="saran-penyajian">
+                        <h4>Saran Penyajian</h4>
+                        <p>Sajikan dengan kuah soto hangat dituangkan di atas rujak buah yang sudah dibumbui. Tambahkan kerupuk udang dan irisan jeruk nipis untuk rasa yang sempurna.</p>
+                    </div>
+                    <a href="https://food.grab.com/id/id/restaurant/warung-rujak-soto-mbok-us-sumberrejo-delivery/6-C6A1R8BALX6FME" class="btn">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="assets/img/pecel-pitik.jpg" alt="Pecel Pitik" class="card-img">
+                <div class="card-content">
+                    <h3>Pecel Pitik</h3>
+                    <p>Ayam kampung yang dibakar dengan bumbu kacang yang khas dan lezat.</p>
+                    <div class="saran-penyajian">
+                        <h4>Saran Penyajian</h4>
+                        <p>Sajikan dengan nasi putih hangat, lalapan mentimun dan kemangi, serta sambal terasi. Paling nikmat disantap bersama keluarga di malam hari.</p>
+                    </div>
+                    <br>
+                    <a href="https://food.grab.com/id/id/restaurant/warung-aluna-nasi-tempong-pecel-tukangkayu-delivery/6-C7UAVLLESE3WVE" class="btn">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Galeri -->
-    <section id="galeri">
-        <h2 class="section-title">Galeri Wisata</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="assets/img/telukBiru.jpeg" alt="Teluk Biru">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/gland-sunset.jpg" alt="G Land">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/raung.jpg" alt="Gunung Raung">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/alasP.jpg" alt="Alas Purwo">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/lider.jpg" alt="Air Terjun Lider">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/green-island.jpg" alt="Green island">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/ranti.jpg" alt="Gunung Ranti">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/jatipapak.jpeg" alt="Hutan Mangrove Jatipapak">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/parang-ireng.jpeg" alt="Pantai Parang Ireng">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/japuro.jpeg" alt="japuro">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/kalisawah.jpeg" alt="Perkemahan Kalisawah">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/baluran.jpeg" alt="Alas Baluran">
-            </div>
-        </div>
-        <br>
-        <div class="card-content">
-                    <h3>Cek Info Lengkap Tentang Destinasi Wisata Kami Disini</h3>
-                    <p></p>
-                    <a href="destinasi.html" class="btn">Cek Disini</a>
+        <section id="galeri">
+            <h2 class="section-title">Galeri Wisata</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/telukBiru.jpeg" alt="Teluk Biru">
                 </div>
-    </section>
+                <div class="gallery-item">
+                    <img src="assets/img/gsunset1.jpeg" alt="G Land">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/raung.jpg" alt="Gunung Raung">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/DSC8774-BY-ALAS-PURWO.jpg" alt="Alas Purwo">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/lider6.jpeg" alt="Air Terjun Lider">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/green-island.jpg" alt="Green island">
+                </div>
+            </div>
+            <br>
+            <div class="card-content" style="text-align:center; margin-top:2rem;">
+                <h3>Cek Info Lengkap Tentang Destinasi Wisata Kami Disini</h3>
+                <a href="destinasi.html" class="btn">Cek Disini</a>
+            </div>
+        </section>
+        <section id="galeri">
+            <h2 class="section-title">Galeri Budaya & Kesenian</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/gandrung.jpg" alt="Gandrung">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/Jbuto.jpeg" alt="Jaranan Buto">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/kebo2an.jpg" alt="Kebo keboan">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/petik-laut.jpeg" alt="Petik Laut">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/BEC.jpg" alt="Banyuwangi Ethno Carnival">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/Gsewu.jpeg" alt="Gandrung Sewu">
+                </div>
+            </div>
+            <br>
+            <div class="card-content" style="text-align:center; margin-top:2rem;">
+                <h3>Cek Info Lengkap Tentang Budaya & Kesenian Kami Disini</h3>
+                <a href="budaya.html" class="btn">Cek Disini</a>
+            </div>
+        </section>
+
+        <section id="galeri">
+            <h2 class="section-title">Galeri Kuliner</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/rujak-soto.jpg" alt="Rujak Soto">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/pecel-pitik.jpg" alt="Pecel Pitik">
+                </div>
+                <div class="gallery-item">
+                <img src="assets/img/cawuk.jpg" alt="Sego Cawuk">
+            </div>
+            </div>
+            <br>
+            <div class="card-content" style="text-align:center; margin-top:2rem;">
+                <h3>Cek Info Lengkap Tentang Kuliner Kami Disini</h3>
+                <a href="test-kuliner.html" class="btn">Cek Disini</a>
+            </div>
+        </section>
 
     <!-- Banyuwangi Ethno Carnival (BEC) -->
     <section class="bec-section" id="bec">
@@ -1099,19 +1299,19 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     </button>
 
     <!-- BUTTON -->
-<div id="chatbot-btn">💬</div>
+    <div id="chatbot-btn">💬</div>
 
-<!-- CHAT WINDOW -->
-<div id="chat-window">
-    <div id="chat-header">🤖bot tour guide</div>
-    <div id="chat-messages"></div>
-    <div id="typing-indicator" style="display:none;"></div>
+    <!-- CHAT WINDOW -->
+    <div id="chat-window">
+        <div id="chat-header">🤖bot tour guide</div>
+        <div id="chat-messages"></div>
+        <div id="typing-indicator" style="display:none;"></div>
 
-    <div id="chat-input-area">
-        <input id="chat-input" type="text" placeholder="Tanyakan wisata / kuliner..." />
-        <button id="send-btn">Kirim</button>
+        <div id="chat-input-area">
+            <input id="chat-input" type="text" placeholder="Tanyakan wisata / kuliner..." />
+            <button id="send-btn">Kirim</button>
+        </div>
     </div>
-</div>
 
     <!-- Footer -->
     <footer>
@@ -1144,6 +1344,15 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     </footer>
 
     <script>
+        // Tampilkan halaman utama saat tombol "Mulai" diklik
+        document.getElementById('start-btn').addEventListener('click', function() {
+            document.getElementById('intro-screen').style.opacity = '0';
+            document.getElementById('intro-screen').style.visibility = 'hidden';
+            setTimeout(() => {
+                document.getElementById('intro-screen').style.display = 'none';
+                document.getElementById('main-content').classList.add('visible');
+            }, 500);
+        });
         // Fungsi untuk smooth scrolling saat tautan navigasi diklik
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
